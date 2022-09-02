@@ -38,6 +38,6 @@ void	PhonyBooky::ft_add_contact(void)
 	this->cont_array[this->contact_id].ft_contacts_parser(contact_str, 2);
 	std::cout << "Your Darkest Secret in Life please: ";
 	std::cin >> contact_str;
-	this->cont_array[this->contact_id].ft_contacts_parser(string, 3);
+	this->cont_array[this->contact_id].ft_contacts_parser(contact_str, 3);
 	std::cout << " " << std::endl;
 }
