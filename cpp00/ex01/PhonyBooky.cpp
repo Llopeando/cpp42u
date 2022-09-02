@@ -12,7 +12,7 @@
 
 #include "PhonyBooky.hpp"
 
-PhonyBooky::PhonyBooky(void)
+PhonyBooky::PhonyBooky(this->cont)
 {
 	std::cout << "Constructor created" << std::endl;
 	return ;
@@ -20,20 +20,24 @@ PhonyBooky::PhonyBooky(void)
 
 void	PhonyBooky::ft_add_contact(void)
 {
-	std::string	string;
+	std::string	contact_str;
 
+	if (this->contact_id == 7)
+		this->contact_id = 0;
+	else
+		this->contact_id++;
 	std::cout << "Welcome to the Contact Adder!" << std::endl;
 	std::cout << "Your Name please: ";
-	std::cin >> string;
-	this->cont_array[0].ft_contacts_parser(string, 0);
+	std::cin >> contact_str;
+	this->cont_array[this->contact_id].ft_contacts_parser(contact_str, 0);
 	std::cout << "Your Last Name please: ";
-	std::cin >> string;
-	this->cont_array[1].ft_contacts_parser(string, 1);
+	std::cin >> contact_str;
+	this->cont_array[this->contact_id].ft_contacts_parser(contact_str, 1);
 	std::cout << "Your Phone Number please: ";
-	std::cin >> string;
-	this->cont_array[2].ft_contacts_parser(string, 2);
+	std::cin >> contact_str;
+	this->cont_array[this->contact_id].ft_contacts_parser(contact_str, 2);
 	std::cout << "Your Darkest Secret in Life please: ";
-	std::cin >> string;
-	this->cont_array[3].ft_contacts_parser(string, 3);
+	std::cin >> contact_str;
+	this->cont_array[this->contact_id].ft_contacts_parser(string, 3);
 	std::cout << " " << std::endl;
 }

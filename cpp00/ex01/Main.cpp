@@ -23,6 +23,7 @@ int	main(void)
 		std::cout << "Enter the command here: ";
 		std::cin >> get_command;
 		std::cout << " " << std::endl;
+		std::cout << get_command << std::endl;
 		if (std::cin.eof())
 			break ;
 		if (!get_command.compare("EXIT"))

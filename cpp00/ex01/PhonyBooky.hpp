@@ -24,6 +24,7 @@ private:
 	std::string	nickname;
 	std::string	phone;
 	std::string	darkest_secret;
+	int			contact_id;
 
 	Contacts	cont_array[8];
 public:
