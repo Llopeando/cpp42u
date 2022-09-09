@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 12:41:09 by ullorent          #+#    #+#             */
-/*   Updated: 2022/07/01 14:03:17 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/09/09 19:19:39 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ private:
 	Contacts	cont_array[8];
 public:
 	PhonyBooky();
+	~PhonyBooky();
 	void	ft_add_contact();
 	//void	ft_search_contact();
 };

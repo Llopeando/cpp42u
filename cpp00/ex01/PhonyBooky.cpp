@@ -6,15 +6,21 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 13:02:37 by ullorent          #+#    #+#             */
-/*   Updated: 2022/07/01 14:03:10 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/09/09 19:33:13 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhonyBooky.hpp"
 
-PhonyBooky::PhonyBooky(this->cont)
+PhonyBooky::PhonyBooky()
 {
-	std::cout << "Constructor created" << std::endl;
+	std::cout << "Constructor called" << std::endl;
+	return ;
+}
+
+PhonyBooky::~PhonyBooky()
+{
+	std::cout << "Constructor called" << std::endl;
 	return ;
 }
 
@@ -28,7 +34,7 @@ void	PhonyBooky::ft_add_contact(void)
 		this->contact_id++;
 	std::cout << "Welcome to the Contact Adder!" << std::endl;
 	std::cout << "Your Name please: ";
-	std::cin >> contact_str;
+	std::getline(std::cin, cont_array[this->contact_id].ft_contacts_parser(contact_str, 0));
 	this->cont_array[this->contact_id].ft_contacts_parser(contact_str, 0);
 	std::cout << "Your Last Name please: ";
 	std::cin >> contact_str;
