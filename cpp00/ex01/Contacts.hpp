@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 12:06:42 by ullorent          #+#    #+#             */
-/*   Updated: 2022/07/01 14:23:12 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/09/13 10:10:25 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,16 @@ class	Contacts
 	public:
 		Contacts();
 		~Contacts();
-		void	ft_contacts_parser(std::string str, int boo);
+		int		contact_id;
+
+		void	ft_add_contact(void);
+
+		void	ft_namestr_parser(std::string str);
+		void	ft_lastnamestr_parser(std::string str);
+		void	ft_nicknamestr_parser(std::string str);
+		void	ft_phonestr_parser(std::string str);
+		void	ft_darkestscrstr_parser(std::string str);
+
 	private:
 		std::string	_name;
 		std::string	_last_name;

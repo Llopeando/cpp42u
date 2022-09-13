@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 12:41:09 by ullorent          #+#    #+#             */
-/*   Updated: 2022/09/09 19:19:39 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/09/13 10:17:29 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ private:
 	std::string	nickname;
 	std::string	phone;
 	std::string	darkest_secret;
-	int			contact_id;
+	//int			contact_id;
 
 	Contacts	cont_array[8];
 public:
 	PhonyBooky();
 	~PhonyBooky();
-	void	ft_add_contact();
+	//void	ft_add_contact();
 	//void	ft_search_contact();
 };
 

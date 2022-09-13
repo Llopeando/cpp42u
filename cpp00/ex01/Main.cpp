@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 12:10:07 by ullorent          #+#    #+#             */
-/*   Updated: 2022/07/01 13:44:45 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/09/13 10:20:42 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	main(void)
 {
 	PhonyBooky	phonebook;
+	Contacts	contacts;
 	std::string	get_command;
 
 	while (1)
@@ -32,7 +33,10 @@ int	main(void)
 			break ;
 		}
 		else if (!get_command.compare("ADD"))
-			phonebook.ft_add_contact();
+		{
+			contacts.ft_add_contact();
+			std::cout << " " << std::endl;
+		}
 		// else if (get_command.compare("SEARCH") == 0)
 		// 	phonebook.ft_search_contact();
 		else
