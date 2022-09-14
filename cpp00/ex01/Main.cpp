@@ -6,15 +6,15 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 12:10:07 by ullorent          #+#    #+#             */
-/*   Updated: 2022/09/13 10:20:42 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/09/14 13:56:01 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhonyBooky.hpp"
+#include "Book.hpp"
 
 int	main(void)
 {
-	PhonyBooky	phonebook;
+	Book	book = Book();
 	Contacts	contacts;
 	std::string	get_command;
 
@@ -22,20 +22,21 @@ int	main(void)
 	{
 		std::cout << "PhonyBooky --- Available commands: ADD, SEARCH, EXIT" << std::endl;
 		std::cout << "Enter the command here: ";
-		std::cin >> get_command;
-		std::cout << " " << std::endl;
-		std::cout << get_command << std::endl;
+		std::getline(std::cin, get_command);
+		if (get_command.size() == 0)
+			continue ;
 		if (std::cin.eof())
 			break ;
-		if (!get_command.compare("EXIT"))
+		if (get_command == "EXIT")
 		{
 			std::cout << "Bye bye!" << std::endl;
 			break ;
 		}
-		else if (!get_command.compare("ADD"))
+		else if (get_command == "ADD")
 		{
-			contacts.ft_add_contact();
-			std::cout << " " << std::endl;
+			std::cout << std::endl;
+			book.ft_contacts_array();
+			std::cout << std::endl;
 		}
 		// else if (get_command.compare("SEARCH") == 0)
 		// 	phonebook.ft_search_contact();

@@ -6,31 +6,31 @@
 #    By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/01 12:10:20 by ullorent          #+#    #+#              #
-#    Updated: 2022/09/09 19:23:59 by ullorent         ###   ########.fr        #
+#    Updated: 2022/09/14 13:38:55 by ullorent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
 
 CPPSRC = Main.cpp \
-PhonyBooky.cpp \
+Book.cpp \
 Contacts.cpp \
 
-CPPINCLUDE = PhonyBooky.hpp \
+CPPINCLUDE = Book.hpp \
 Contacts.hpp \
 
-CPPOSRC = $(CSRC:.cpp=.o)
+CPPOSRC = $(CPPSRC:.cpp=.o)
 
 CPPFLAGS = -Wall -Werror -Wextra
 CLANGCMD = clang++
 
 all: $(NAME)
 
-$(NAME): $(CPPOSRC)
-	$(CLANGCMD) $(CPPFLAGS) $(CPPSRC) -ICPPINCLUDE -o $(NAME)
-
 %.o: %.cpp
-	$(CLANGCMD) $(CPPFLAGS) $(CPPSRC) -c $< -o $@
+	$(CLANGCMD) $(CPPFLAGS) -c $^ -o $@
+
+$(NAME): $(CPPOSRC) $(CPPINCLUDE)
+	$(CLANGCMD) $(CPPFLAGS) $(CPPOSRC) -I. -o $(NAME)
 
 clean:
 	rm -rf *.o

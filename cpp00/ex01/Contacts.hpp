@@ -6,13 +6,14 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 12:06:42 by ullorent          #+#    #+#             */
-/*   Updated: 2022/09/13 10:10:25 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/09/14 12:37:15 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef	CONTACTS_H
 # define CONTACTS_H
 #include <iostream>
+#include <string>
 
 class	Contacts
 {

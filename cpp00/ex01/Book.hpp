@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhonyBooky.hpp                                     :+:      :+:    :+:   */
+/*   Book.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 12:41:09 by ullorent          #+#    #+#             */
-/*   Updated: 2022/09/13 10:17:29 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/09/14 13:34:27 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	PHONYBOOKY_H
-# define PHONYBOOKY_H
+#ifndef	BOOK_H
+# define BOOK_H
 #include "Contacts.hpp"
 #include <iostream>
 #include <string>
 
-class PhonyBooky
+class Book
 {
 private:
 	std::string	name;
@@ -24,12 +24,13 @@ private:
 	std::string	nickname;
 	std::string	phone;
 	std::string	darkest_secret;
-	//int			contact_id;
+	int			contact_id;
 
 	Contacts	cont_array[8];
 public:
-	PhonyBooky();
-	~PhonyBooky();
+	Book();
+	~Book();
+	void	ft_contacts_array();
 	//void	ft_add_contact();
 	//void	ft_search_contact();
 };
