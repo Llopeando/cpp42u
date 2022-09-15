@@ -6,19 +6,18 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 12:06:39 by ullorent          #+#    #+#             */
-/*   Updated: 2022/09/14 13:57:27 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/09/15 14:12:54 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contacts.hpp"
 
+//Constructor and destructor (~)
 Contacts::Contacts(void) {
 	return ;
 }
 
-Contacts::~Contacts(void) {
-	return ;
-}
+Contacts::~Contacts(void) { }
 
 //Strings data parser
 void	Contacts::ft_namestr_parser(std::string str) {
@@ -39,6 +38,21 @@ void	Contacts::ft_phonestr_parser(std::string str) {
 
 void	Contacts::ft_darkestscrstr_parser(std::string str) {
 	this->_darkest_secret = str;
+}
+
+//Data returner
+std::string	Contacts::ft_data_return(int boo) {
+	if (boo == 0)
+		return (this->_name);
+	if (boo == 1)
+		return (this->_last_name);
+	if (boo == 2)
+		return (this->_nickname);
+	if (boo == 3)
+		return (this->_phone);
+	if (boo == 4)
+		return (this->_darkest_secret);
+	return (NULL);
 }
 
 //Contacts adder

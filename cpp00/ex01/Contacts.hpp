@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 12:06:42 by ullorent          #+#    #+#             */
-/*   Updated: 2022/09/14 12:37:15 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/09/15 13:02:02 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CONTACTS_H
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 class	Contacts
 {
@@ -22,13 +23,15 @@ class	Contacts
 		~Contacts();
 		int		contact_id;
 
-		void	ft_add_contact(void);
+		void	ft_add_contact();
 
 		void	ft_namestr_parser(std::string str);
 		void	ft_lastnamestr_parser(std::string str);
 		void	ft_nicknamestr_parser(std::string str);
 		void	ft_phonestr_parser(std::string str);
 		void	ft_darkestscrstr_parser(std::string str);
+		
+		std::string	ft_data_return(int boo);
 
 	private:
 		std::string	_name;
