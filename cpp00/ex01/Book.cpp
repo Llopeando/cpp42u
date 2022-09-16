@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 13:02:37 by ullorent          #+#    #+#             */
-/*   Updated: 2022/09/15 14:31:25 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/09/16 09:07:48 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 //Constructor and destructor (~)
 Book::Book() {
 	contact_id = 0;
-	contact_qu = 0;
+	contact_qu = -1;
 }
 
 Book::~Book() { }
@@ -24,7 +24,6 @@ Book::~Book() { }
 void	Book::ft_contacts_array(void)
 {
 	std::cout << "--> This contact ID: [" << contact_id << "] <--" << std::endl;
-	std::cout << "this->contact_id: " << this->contact_id << std::endl;
 	cont_array[contact_id].ft_add_contact();
 	if (this->contact_id == 7)
 		this->contact_id = 0;
@@ -41,7 +40,14 @@ void	Book::ft_search_contacts(void)
 	int			nbr;
 	
 	nbr = 0;
-	this->ft_table_printer();
+	if (this->contact_qu == -1)
+	{
+		std::cout << std::endl <<"[!] There are not any contacts available" << std::endl;
+		std::cout << "Did you added them with the 'ADD' command?" << std::endl;
+		return ;
+	}
+	else
+		this->ft_table_printer();
 	while (1)
 	{
 		std::cout << "--> Which contact do you want to search? [0 to 7]: ";
@@ -74,7 +80,6 @@ void	Book::ft_table_printer(void)
 	std::cout << "┌-----------┬-----------┬----------┬----------┐" << std::endl;
 	std::cout << "|     Index |      Name | Last name|  Nickname|" << std::endl;
 	std::cout << "├-----------|-----------|----------|----------┤" << std::endl;
-	std::cout << "ID: " << this->contact_qu << std::endl;
 	while (c <= this->contact_qu)
 	{
 		std::cout << "|" <<std::setw(10) << c << " | ";
