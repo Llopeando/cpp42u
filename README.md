@@ -26,7 +26,7 @@
 ## 📗 Guías y documentos en los que me estoy basando. ¡Gracias!
 Guía de **[@qingqingqingli](https://github.com/qingqingqingli)**: https://github.com/qingqingqingli/CPP                            
 Guía de la UVa (Escuela de Ingenierías Industriales): https://www2.eii.uva.es/fund_inf/cpp/index.html                             
-Preguntas y respuestas de Stack Overflow: https://stackoverflow.com/
+Preguntas y respuestas de Stack Overflow: https://stackoverflow.com/                                            
 Learn CPP Guide by Alex: https://www.learncpp.com
 
 -------
