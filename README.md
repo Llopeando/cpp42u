@@ -11,8 +11,8 @@
 | Proyecto | Estado | Nota final |
 | :-------------: | :-------------: | :-------------: |
 | ⌨️ | 🧠 | 🖊️ |
-| C++ 00 | En proceso 🟢 | ❓❓❓ |
-| C++ 01 | Sin empezar 🟠 | ❓❓❓ |
+| C++ 00 | Acabado 🟢 | ❓❓❓ |
+| C++ 01 | En proceso 🟠 | ❓❓❓ |
 | C++ 02 | Sin empezar 🔴 | ❓❓❓ |
 | C++ 03 | Sin empezar 🔴 | ❓❓❓ |
 | C++ 04 | Sin empezar 🔴 | ❓❓❓ |
