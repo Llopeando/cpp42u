@@ -6,13 +6,14 @@
 #    By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/16 09:56:26 by ullorent          #+#    #+#              #
-#    Updated: 2022/09/16 11:53:39 by ullorent         ###   ########.fr        #
+#    Updated: 2022/09/16 14:11:26 by ullorent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = account
 
-CPPSRC = test.cpp \
+CPPSRC = Account.cpp \
+tests.cpp
 
 CPPINCLUDE = Account.hpp \
 
