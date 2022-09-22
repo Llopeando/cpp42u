@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/21 14:29:20 by ullorent          #+#    #+#             */
-/*   Updated: 2022/09/22 13:31:08 by ullorent         ###   ########.fr       */
+/*   Created: 2022/09/22 14:26:25 by ullorent          #+#    #+#             */
+/*   Updated: 2022/09/22 14:33:47 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANA_H
+#define HUMANA_H
+#include <iostream>
+#include <string>
 
-Zombie *zombieHorde(int N, std::string name) {
-	int	c;
+class	HumanA 
+{
+	public:
+		HumanA();
+		~HumanA();
+	private:
+		/* data */
+};
 
-	c = 0;
-	Zombie *Zombies = new Zombie[N];
-	while (N > c)
-	{
-		Zombies[c].zombie_name_setter(c, name);
-		Zombies[c].Announce();
-		c++;
-	}
-	return (Zombies);
-}
+#endif

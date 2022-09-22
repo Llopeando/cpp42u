@@ -5,18 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/21 14:16:57 by ullorent          #+#    #+#              #
-#    Updated: 2022/09/22 13:28:56 by ullorent         ###   ########.fr        #
+#    Created: 2022/09/22 13:55:20 by ullorent          #+#    #+#              #
+#    Updated: 2022/09/22 13:56:11 by ullorent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombiehorde
+NAME = violence
 
 CPPSRC = main.cpp \
-Zombie.cpp \
-ZombieHorde.cpp
+Weapon.cpp \
+HumanA.cpp \
+HumanB.cpp \
 
-CPPINCLUDE = Zombie.hpp \
+CPPINCLUDE = Weapon.hpp \
+HumanA.hpp \
+HumanB.hpp \
 
 CPPOSRC = $(CPPSRC:.cpp=.o)
 

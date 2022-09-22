@@ -5,18 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/21 14:16:57 by ullorent          #+#    #+#              #
-#    Updated: 2022/09/22 13:28:56 by ullorent         ###   ########.fr        #
+#    Created: 2022/09/22 13:32:16 by ullorent          #+#    #+#              #
+#    Updated: 2022/09/22 13:51:28 by ullorent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombiehorde
+NAME = hithisisbrain
 
 CPPSRC = main.cpp \
-Zombie.cpp \
-ZombieHorde.cpp
-
-CPPINCLUDE = Zombie.hpp \
 
 CPPOSRC = $(CPPSRC:.cpp=.o)
 
@@ -28,7 +24,7 @@ all: $(NAME)
 %.o: %.cpp
 	$(CLANGCMD) $(CPPFLAGS) -c $^ -o $@
 
-$(NAME): $(CPPOSRC) $(CPPINCLUDE)
+$(NAME): $(CPPOSRC)
 	$(CLANGCMD) $(CPPFLAGS) $(CPPOSRC) -I. -o $(NAME)
 
 clean:

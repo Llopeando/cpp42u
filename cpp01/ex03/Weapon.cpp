@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/21 14:29:20 by ullorent          #+#    #+#             */
-/*   Updated: 2022/09/22 13:31:08 by ullorent         ###   ########.fr       */
+/*   Created: 2022/09/22 14:07:11 by ullorent          #+#    #+#             */
+/*   Updated: 2022/09/22 14:22:25 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-Zombie *zombieHorde(int N, std::string name) {
-	int	c;
+//Constructor and destructor
+Weapon::Weapon (std::string type) {}
 
-	c = 0;
-	Zombie *Zombies = new Zombie[N];
-	while (N > c)
-	{
-		Zombies[c].zombie_name_setter(c, name);
-		Zombies[c].Announce();
-		c++;
-	}
-	return (Zombies);
+Weapon::~Weapon () {}
+
+//String GET method
+std::string const	&Weapon::getType(void) const {
+	return (this->_type);
+}
+
+//String SET method
+void	Weapon::setType(std::string type) {
+	this->_type = type;
+	return ;
 }
