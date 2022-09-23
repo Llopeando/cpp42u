@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 14:26:25 by ullorent          #+#    #+#             */
-/*   Updated: 2022/09/23 09:45:12 by ullorent         ###   ########.fr       */
+/*   Created: 2022/09/23 11:49:36 by ullorent          #+#    #+#             */
+/*   Updated: 2022/09/23 11:51:11 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_H
-#define HUMANA_H
-#include <iostream>
-#include <string>
-#include "Weapon.hpp"
+#include "Karen.hpp"
 
-class	HumanA 
+int	main(int argc, char **argv)
 {
-	public:
-		HumanA(std::string str, Weapon &w_type);
-		~HumanA();
+	Karen	karen;
 
-		void	attack(void);
-	private:
-		std::string	_name;
-		Weapon	&_w_type;
-};
-
-#endif
+	if (argc == 2)
+	{
+		karen.complain(argv[1]);
+		return (0);
+	}
+	else
+	{
+		std::cout << "[!] Please, verify your arguments" << std::endl;
+		return (1);
+	}
+	return (0);
+}

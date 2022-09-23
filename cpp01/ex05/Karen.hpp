@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 14:26:25 by ullorent          #+#    #+#             */
-/*   Updated: 2022/09/23 09:45:12 by ullorent         ###   ########.fr       */
+/*   Created: 2022/09/23 11:40:39 by ullorent          #+#    #+#             */
+/*   Updated: 2022/09/23 12:13:15 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_H
-#define HUMANA_H
+#ifndef KAREN_H
+#define KAREN_H
 #include <iostream>
 #include <string>
-#include "Weapon.hpp"
 
-class	HumanA 
+class Karen
 {
 	public:
-		HumanA(std::string str, Weapon &w_type);
-		~HumanA();
+		Karen(/* args */);
+		~Karen();
 
-		void	attack(void);
+		void(Karen::*func)(void);
+		void	complain(std::string level);
 	private:
-		std::string	_name;
-		Weapon	&_w_type;
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
 };
 
 #endif

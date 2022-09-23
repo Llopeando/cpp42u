@@ -6,9 +6,13 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 13:56:43 by ullorent          #+#    #+#             */
-/*   Updated: 2022/09/22 14:06:58 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/09/23 09:50:19 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 int main()
 {
