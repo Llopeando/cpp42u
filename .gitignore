@@ -31,5 +31,6 @@
 *.out
 *.app
 
-# Other files
+# Other files and/or folders
 .DS_Store
+./.vscode
