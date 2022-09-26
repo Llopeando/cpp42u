@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 11:49:36 by ullorent          #+#    #+#             */
-/*   Updated: 2022/09/26 14:35:27 by ullorent         ###   ########.fr       */
+/*   Created: 2022/09/26 14:39:52 by ullorent          #+#    #+#             */
+/*   Updated: 2022/09/26 14:43:11 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#ifndef KAREN_H
+#define KAREN_H
+#include <iostream>
+#include <string>
 
-int	main(int argc, char **argv)
+class Karen
 {
-	Karen	karen;
+	public:
+		Karen();
+		~Karen();
 
-	if (argc == 2)
-		karen.complain(argv[1]);
-	else
-	{
-		std::cout << "[!] Please, verify your arguments" << std::endl;
-		return (1);
-	}
-	return (0);
-}
+		void	karenFilter(std::string level);
+	private:
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
+};
+
+#endif

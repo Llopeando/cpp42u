@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:40:39 by ullorent          #+#    #+#             */
-/*   Updated: 2022/09/23 12:13:15 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/09/26 14:40:16 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@
 class Karen
 {
 	public:
-		Karen(/* args */);
+		Karen();
 		~Karen();
 
-		void(Karen::*func)(void);
 		void	complain(std::string level);
 	private:
 		void	debug(void);

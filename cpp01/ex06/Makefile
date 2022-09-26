@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/23 11:40:00 by ullorent          #+#    #+#              #
-#    Updated: 2022/09/26 14:36:11 by ullorent         ###   ########.fr        #
+#    Created: 2022/09/26 14:38:42 by ullorent          #+#    #+#              #
+#    Updated: 2022/09/26 14:38:49 by ullorent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = karen
+NAME = karenfilter
 
 CPPSRC = main.cpp \
 Karen.cpp \
