@@ -34,4 +34,4 @@
 # Other files and/or folders
 .DS_Store
 ./.vscode
-cpp02/ex00/Fixed.cpp
+./.vscode/settings.json
