@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 10:02:04 by ullorent          #+#    #+#             */
-/*   Updated: 2022/09/23 11:26:27 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/09/27 08:57:26 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int	main(int argc, char **argv)
 	else
 	{
 		std::cout << "[!] Insufficient arguments" << std::endl;
+		std::cout << "ex.; ./replace [Filename] [String to search] [String to replace with]" << std::endl;
 		return (1);
 	}
 	return (0);
