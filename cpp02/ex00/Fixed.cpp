@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 13:50:34 by ullorent          #+#    #+#             */
-/*   Updated: 2022/09/27 14:31:02 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/11/17 19:57:40 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,7 @@ Fixed::Fixed() : _value(0) {
 
 Fixed::Fixed(const Fixed& p1) { //Copy of constructor
 	std::cout << "Copy constructor called" << std::endl;
-	return;
-}
-
-Fixed::Fixed(int p1) : _value(p1){ //Assignment operator overload
-	std::cout << "Assignation operator called" << std::endl;
+	*this = p1;
 	return;
 }
 
@@ -36,13 +32,20 @@ Fixed::~Fixed() {
 //Private variables
 int const Fixed::_bits = 8;
 
-//Member functions (exercise main functions)
+//Member functions
 int	Fixed::getRawBits() const {
 	std::cout << "getRawBits member function called" << std::endl;
-	return(0);
+	return(_value);
 }
 
 void	Fixed::setRawBits(int const raw) {
-	std::cout << "0" << std::endl;
-	return;
+	this->_value = raw;
+	return ;
+}
+
+//Operator overload function
+Fixed &Fixed::operator=(const Fixed& raw) {
+	std::cout << "Assignation operator called" << std::endl;
+	(this->_value) = raw.getRawBits();
+	return (*this);
 }

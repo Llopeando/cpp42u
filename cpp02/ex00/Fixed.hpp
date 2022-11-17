@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 13:37:40 by ullorent          #+#    #+#             */
-/*   Updated: 2022/09/27 14:23:20 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/11/17 19:39:47 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class Fixed
 		Fixed(int p1);
 		Fixed(const Fixed& p1);
 		~Fixed();
+
+		Fixed &operator=(const Fixed& raw);
 
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
