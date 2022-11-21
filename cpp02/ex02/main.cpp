@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/27 13:37:40 by ullorent          #+#    #+#             */
-/*   Updated: 2022/11/21 17:04:52 by ullorent         ###   ########.fr       */
+/*   Created: 2022/11/21 17:31:09 by ullorent          #+#    #+#             */
+/*   Updated: 2022/11/21 17:31:52 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CANONICAL_FIXED_H_
-#define CANONICAL_FIXED_H_
-#include <iostream>
-#include <string>
+#include "Fixed.hpp"
 
-class Fixed
-{
-	public:
-		Fixed();
-		Fixed(const int p1);
-		Fixed(const float p1);
-		Fixed(const Fixed &p1);
-		~Fixed();
+int main( void ) {
+	Fixed a;
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 
-		Fixed &operator=(const Fixed& raw);
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
 
-		int getRawBits(void) const;
-		void setRawBits(int const raw);
-	private:
-		int	_value;
-		static const int _bits;
-};
+	std::cout << b << std::endl;
 
-#endif //CANONICAL_FIXED_H_
+	std::cout << Fixed::max( a, b ) << std::endl;
+	return 0;
+}
