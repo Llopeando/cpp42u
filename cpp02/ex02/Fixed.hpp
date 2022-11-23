@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:31:54 by ullorent          #+#    #+#             */
-/*   Updated: 2022/11/22 16:09:16 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/11/23 20:14:04 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,31 @@ class Fixed
 		Fixed();
 		Fixed(int p1);
 		Fixed(float p1);
-		Fixed(const Fixed& p1);
+		Fixed(const Fixed &p1);
 		~Fixed();
 
-		Fixed &operator=(const Fixed& raw);
-		bool operator>(const Fixed& raw) const;
-		bool operator<(const Fixed& raw);
-		bool operator>=(const Fixed& raw);
-		bool operator<=(const Fixed& raw);
-		bool operator==(const Fixed& raw);
-		bool operator!=(const Fixed& raw);
+		bool operator>(const Fixed &raw) const;
+		bool operator<(const Fixed &raw) const;
+		bool operator>=(const Fixed &raw) const;
+		bool operator<=(const Fixed &raw) const;
+		bool operator==(const Fixed &raw) const;
+		bool operator!=(const Fixed &raw) const;
+
+		Fixed &operator=(const Fixed &raw);
+		Fixed operator+(const Fixed &raw) const;
+		Fixed operator-(const Fixed &raw) const;
+		Fixed operator*(const Fixed &raw) const;
+		Fixed operator/(const Fixed &raw) const;
+
+		Fixed operator++();
+		Fixed operator++(int);
+		Fixed operator--();
+		Fixed operator--(int);
+
+		static Fixed &min(Fixed &p1, Fixed &p2);
+		static const Fixed &min(const Fixed &p1, const Fixed &p2);
+		static Fixed &max(Fixed &p1, Fixed &p2);
+		static const Fixed &max(const Fixed &p1, const Fixed &p2);
 
 		int getRawBits(void) const;
 		void setRawBits(int const raw);

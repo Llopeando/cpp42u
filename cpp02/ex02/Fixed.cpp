@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:33:22 by ullorent          #+#    #+#             */
-/*   Updated: 2022/11/22 16:10:29 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/11/23 20:23:43 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,29 @@
 // --- Constructors and destructor --- //
 //Fixed points are float numbers that do not change, so they are more "usable"
 Fixed::Fixed() : _value(0) {
-	std::cout << "Default constructor called" << std::endl;
+	//std::cout << "Default constructor called" << std::endl;
 	return;
 }
 
 Fixed::Fixed(const int p1) : _value(p1 << _bits) { //Int constant constructor to fixed point
-	std::cout << "Int constructor called" << std::endl;
+	//std::cout << "Int constructor called" << std::endl;
 	return ;
 }
 
 Fixed::Fixed(const float p1) : _value(0) { //Float constant constructor to fixed point
-	std::cout << "Float constructor called" << std::endl;
+	//std::cout << "Float constructor called" << std::endl;
 	setRawBits(roundf(p1 * (1 << _bits)));
 	return ;
 }
 
 Fixed::Fixed(const Fixed &p1) { //Copy of constructor
-	std::cout << "Copy constructor called" << std::endl;
+	//std::cout << "Copy constructor called" << std::endl;
 	*this = p1;
 	return;
 }
 
 Fixed::~Fixed() {
-	std::cout << "Destructor called" << std::endl;
+	//std::cout << "Destructor called" << std::endl;
 	return;
 }
 
@@ -69,37 +69,37 @@ float Fixed::toFloat() const {
 }
 
 // --- Comparations operators --- //
-bool Fixed::operator>(const Fixed& raw) const {
+bool Fixed::operator>(const Fixed &raw) const {
 	if (raw.getRawBits() > raw.getRawBits())
 		return 1;
 	return 0;
 }
 
-bool Fixed::operator<(const Fixed& raw) {
+bool Fixed::operator<(const Fixed &raw) const {
 	if (raw.getRawBits() < raw.getRawBits())
 		return 1;
 	return 0;
 }
 
-bool Fixed::operator>=(const Fixed& raw) {
+bool Fixed::operator>=(const Fixed &raw) const {
 	if (raw.getRawBits() >= raw.getRawBits())
 		return 1;
 	return 0;
 }
 
-bool Fixed::operator<=(const Fixed& raw) {
+bool Fixed::operator<=(const Fixed &raw) const {
 	if (raw.getRawBits() <= raw.getRawBits())
 		return 1;
 	return 0;
 }
 
-bool Fixed::operator==(const Fixed& raw) {
+bool Fixed::operator==(const Fixed &raw) const {
 	if (raw.getRawBits() == raw.getRawBits())
 		return 1;
 	return 0;
 }
 
-bool Fixed::operator!=(const Fixed& raw) {
+bool Fixed::operator!=(const Fixed &raw) const {
 	if (raw.getRawBits() != raw.getRawBits())
 		return 1;
 	return 0;
@@ -108,7 +108,75 @@ bool Fixed::operator!=(const Fixed& raw) {
 // --- Arithmetics operators --- //
 // With this functions you can customize the C++ operators
 Fixed &Fixed::operator=(const Fixed& raw) { //This operator will assign the bits value into the _value so it can be shown in standard output
-	std::cout << "Assignation operator called" << std::endl;
+	//std::cout << "Assignation operator called" << std::endl;
 	_value = raw.getRawBits();
 	return (*this);
+}
+
+Fixed Fixed::operator+(const Fixed &raw) const {
+	return (raw.getRawBits() + raw.getRawBits());
+}
+
+Fixed Fixed::operator-(const Fixed &raw) const {
+	return (raw.getRawBits() - raw.getRawBits());
+}
+
+Fixed Fixed::operator*(const Fixed &raw) const {
+	return (((float)(this->getRawBits)() * raw.getRawBits()) / (1 << (2 * _bits)));
+}
+
+Fixed Fixed::operator/(const Fixed &raw) const {
+	return (raw.getRawBits() / raw.getRawBits());
+}
+
+// --- PreInc/PostInc/PreDec/PostDec --- //
+Fixed Fixed::operator++() { //Pre Increment function (++value)
+	this->_value += 1;
+	return (*this);
+}
+
+Fixed Fixed::operator++(int) { //Post Increment function (value++)
+	Fixed tmp(*this);
+	operator++();
+	return (tmp);
+}
+
+Fixed Fixed::operator--() { //Pre Decrement function (--value)
+	this->_value -= 1;
+	return (*this);
+}
+
+Fixed Fixed::operator--(int) { //Post Decrement function (value--)
+	Fixed tmp(*this);
+	operator--();
+	return (tmp);
+}
+
+// --- Member function 'min' and 'max' --- //
+Fixed &Fixed::min(Fixed &p1, Fixed &p2) { //Here we return the smallest NON-constant fixed point value
+	if (p1.getRawBits() < p2.getRawBits())
+		return (p1);
+	else
+		return (p2);
+}
+
+const Fixed &Fixed::min(const Fixed &p1, const Fixed &p2) { //Here we return the smallest constant fixed point value
+	if (p1.getRawBits() < p2.getRawBits())
+		return (p2);
+	else
+		return (p1);
+}
+
+Fixed &Fixed::max(Fixed &p1, Fixed &p2) { //Here we return the bigger NON-constant fixed point value
+	if (p1.getRawBits() > p2.getRawBits())
+		return (p1);
+	else
+		return (p2);
+}
+
+const Fixed &Fixed::max(const Fixed &p1, const Fixed &p2) { //Here we return the bigger constant fixed point value
+	if (p1.getRawBits() > p2.getRawBits())
+		return (p1);
+	else
+		return (p2);
 }
