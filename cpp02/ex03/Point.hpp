@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 17:31:09 by ullorent          #+#    #+#             */
-/*   Updated: 2022/11/24 16:16:48 by ullorent         ###   ########.fr       */
+/*   Created: 2022/11/24 16:41:28 by ullorent          #+#    #+#             */
+/*   Updated: 2022/11/24 16:50:32 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#ifndef CANONICAL_POINT_H
+#define CANONICAL_POINT_H
+#include <iostream>
+#include <string>
+#include <cmath>
 
-int main( void ) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+class Point
+{
+	public:
+		Point();
+		Point(const float &p1, const float &p2);
+		Point(const Point &p1);
+		~Point();
 
-	Fixed c;
-	Fixed const d;
+		
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
+	private:
+		Point const x;
+		Point const y;
+};
 
-	std::cout << b << std::endl;
-
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
-}
+#endif
