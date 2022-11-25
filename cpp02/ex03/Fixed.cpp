@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 16:40:19 by ullorent          #+#    #+#             */
-/*   Updated: 2022/11/24 16:40:24 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/11/25 16:44:40 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,37 +70,37 @@ float Fixed::toFloat() const {
 
 // --- Comparations operators --- //
 bool Fixed::operator>(const Fixed &raw) const {
-	if (raw.getRawBits() > raw.getRawBits())
+	if (this->getRawBits() > raw.getRawBits())
 		return 1;
 	return 0;
 }
 
 bool Fixed::operator<(const Fixed &raw) const {
-	if (raw.getRawBits() < raw.getRawBits())
+	if (this->getRawBits() < raw.getRawBits())
 		return 1;
 	return 0;
 }
 
 bool Fixed::operator>=(const Fixed &raw) const {
-	if (raw.getRawBits() >= raw.getRawBits())
+	if (this->getRawBits() >= raw.getRawBits())
 		return 1;
 	return 0;
 }
 
 bool Fixed::operator<=(const Fixed &raw) const {
-	if (raw.getRawBits() <= raw.getRawBits())
+	if (this->getRawBits() <= raw.getRawBits())
 		return 1;
 	return 0;
 }
 
 bool Fixed::operator==(const Fixed &raw) const {
-	if (raw.getRawBits() == raw.getRawBits())
+	if (this->getRawBits() == raw.getRawBits())
 		return 1;
 	return 0;
 }
 
 bool Fixed::operator!=(const Fixed &raw) const {
-	if (raw.getRawBits() != raw.getRawBits())
+	if (this->getRawBits() != raw.getRawBits())
 		return 1;
 	return 0;
 }
@@ -114,19 +114,31 @@ Fixed &Fixed::operator=(const Fixed& raw) { //This operator will assign the bits
 }
 
 Fixed Fixed::operator+(const Fixed &raw) const {
-	return (raw.getRawBits() + raw.getRawBits());
+	Fixed	temp;
+
+	temp.setRawBits((this->getRawBits() + raw.getRawBits()));
+	return (temp);
 }
 
 Fixed Fixed::operator-(const Fixed &raw) const {
-	return (raw.getRawBits() - raw.getRawBits());
+	Fixed	temp;
+
+	temp.setRawBits((this->getRawBits() - raw.getRawBits()));
+	return (temp);
 }
 
 Fixed Fixed::operator*(const Fixed &raw) const {
-	return (((float)(this->getRawBits)() * raw.getRawBits()) / (1 << (2 * _bits)));
+	Fixed	temp;
+
+	temp.setRawBits((this->getRawBits() * raw.getRawBits()) / (1 << _bits));
+	return (temp);
 }
 
 Fixed Fixed::operator/(const Fixed &raw) const {
-	return (raw.getRawBits() / raw.getRawBits());
+	Fixed	temp;
+
+	temp.setRawBits((roundf(this->getRawBits()) / raw.getRawBits()) * (1 << _bits));
+	return (temp);
 }
 
 // --- PreInc/PostInc/PreDec/PostDec --- //
