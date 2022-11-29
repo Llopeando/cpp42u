@@ -6,7 +6,7 @@
 #    By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/24 16:37:40 by ullorent          #+#    #+#              #
-#    Updated: 2022/11/25 14:26:42 by ullorent         ###   ########.fr        #
+#    Updated: 2022/11/29 14:16:12 by ullorent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ CPPINCLUDE = Fixed.hpp \
 
 CPPOSRC = $(CPPSRC:.cpp=.o)
 
-CPPFLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address
+CPPFLAGS = -Wall -Werror -Wextra
 CLANGCMD = clang++
 
 all: $(NAME)
@@ -30,7 +30,8 @@ all: $(NAME)
 	$(CLANGCMD) $(CPPFLAGS) -c $^ -o $@
 
 $(NAME): $(CPPOSRC) $(CPPINCLUDE)
-	$(CLANGCMD) $(CPPFLAGS) $(CPPOSRC) -I. -o $(NAME)
+	$(CLANGCMD) $(CPPFLAGS) $(CPPOSRC) $^ -o $(NAME)
+	@echo "\033[92mcpp02/ex03 has been successfully compiled!\033[0m"
 
 clean:
 	rm -rf *.o

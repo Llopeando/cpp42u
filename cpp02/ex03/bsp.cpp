@@ -6,33 +6,36 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 12:51:53 by ullorent          #+#    #+#             */
-/*   Updated: 2022/11/25 17:46:21 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/11/29 13:47:44 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
 // --- Main function --- //
+float triangle_area(Point const a, Point const b, Point const c) {
+	// 'fabs' its a function which returns the absolute value of an argument in float. (example; -5.5 absolute value would be 5.5)
+	return (fabs(a.get_x() * (b.get_y() - c.get_y()) + b.get_x() * (c.get_y() - a.get_y()) + c.get_x() * (a.get_y() - b.get_y())) / 2);
+}
+
 bool bsp(Point const a, Point const b, Point const c, Point const point) {
-	Fixed w1;
-	Fixed w2;
+	float area_ABC;
+	float area_PBC;
+	float area_APC;
+	float area_ABP;
 
-	if (c.get_y() == a.get_y())
-	{
-		c.get_y()
-	}
-	w1 = (a.get_x() * (c.get_y() - a.get_y()) + (point.get_y() - a.get_y()) * (c.get_x() - a.get_x()) - point.get_x() * (c.get_y() - a.get_y())) /
-	((b.get_y() - a.get_y()) * (c.get_x() - a.get_x()) - (b.get_x() - a.get_x()) * (c.get_y() - a.get_y()));
-	std::cout << "w1 = " << w1 << std::endl;
-
-	w2 = (point.get_y() - a.get_y() - w1 * (b.get_y() - a.get_y())) / (c.get_y() - a.get_y());
-	std::cout << "w2 = " << w2 << "\n" << std::endl;
-
-	std::cout << "w2 (2)= " << w2 << std::endl;
-	if (w1 > 0 && w2 > 0 && w1 + w2 < 1)
+	area_ABC = triangle_area(a, b, c); //We calculate the triangle area here
+	//std::cout << "ABC = " << area_ABC << std::endl;
+	area_PBC = triangle_area(point, b, c); //We calculate the triangle area with point, b and c values
+	//std::cout << "PBC = " << area_PBC << std::endl;
+	area_APC = triangle_area(a, point, c); //We calculate the triangle area with a, point and c values
+	//std::cout << "APC = " << area_APC << std::endl;
+	area_ABP = triangle_area(a, b, point);  //We calculate the triangle area with a, b and point values
+	//std::cout << "ABP = " << area_ABP << std::endl;
+	if (area_PBC == 0 || area_APC == 0 || area_ABP == 0)
+		return (false);
+	else if (area_ABC == area_PBC + area_APC + area_ABP)
 		return (true);
 	else
-	{
 		return (false);
-	}
 }

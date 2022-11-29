@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 12:47:21 by ullorent          #+#    #+#             */
-/*   Updated: 2022/11/25 17:05:29 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/11/29 13:55:23 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 #include "Point.hpp"
 
 int	main() {
-	Point a(0, 7);
-	Point b(0, 15);
-	Point c(15, 7);
-	Point point(1, 9);
+	Point a(0, 0); // Triangle point 1
+	Point b(20, 0); // Triangle point 2
+	Point c(10, 30); // Triangle point 3
+	Point point(8.5, 25); // Point to search
 
-	std::cout << bsp(a, b, c, point) << std::endl;
+	if (bsp(a, b, c, point))
+		std::cout << "\033[1;37m[BSP] \033[32mThe point is inside the triangle!" << std::endl;
+	else
+		std::cout << "\033[1;37m[BSP] \033[31mThe point is NOT inside the triangle!" << std::endl;
 
 	return 0;
 }
