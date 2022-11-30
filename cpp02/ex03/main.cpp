@@ -6,14 +6,13 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 12:47:21 by ullorent          #+#    #+#             */
-/*   Updated: 2022/11/29 14:26:33 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/11/30 09:41:28 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include "Point.hpp"
 
-// Website example for triangle viewing: https://www.desmos.com/calculator?lang=es
 int	main() {
 	Point a(0, 0); // Triangle point 1
 	Point b(20, 0); // Triangle point 2

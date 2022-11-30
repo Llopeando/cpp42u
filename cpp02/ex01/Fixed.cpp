@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 18:18:43 by ullorent          #+#    #+#             */
-/*   Updated: 2022/11/21 17:25:55 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/11/30 10:17:02 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,24 @@
 //Fixed points are float numbers that do not change, so they are more "usable"
 Fixed::Fixed() : _value(0) {
 	std::cout << "Default constructor called" << std::endl;
-	return;
 }
 
 Fixed::Fixed(const int p1) : _value(p1 << _bits) { //Int constant constructor to fixed point
 	std::cout << "Int constructor called" << std::endl;
-	return ;
 }
 
 Fixed::Fixed(const float p1) : _value(0) { //Float constant constructor to fixed point
 	std::cout << "Float constructor called" << std::endl;
 	setRawBits(roundf(p1 * (1 << _bits)));
-	return ;
 }
 
 Fixed::Fixed(const Fixed &p1) { //Copy of constructor
 	std::cout << "Copy constructor called" << std::endl;
 	*this = p1;
-	return;
 }
 
 Fixed::~Fixed() {
 	std::cout << "Destructor called" << std::endl;
-	return;
 }
 
 // --- Private variables --- //

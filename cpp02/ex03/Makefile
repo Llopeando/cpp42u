@@ -6,7 +6,7 @@
 #    By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/24 16:37:40 by ullorent          #+#    #+#              #
-#    Updated: 2022/11/29 14:21:53 by ullorent         ###   ########.fr        #
+#    Updated: 2022/11/30 10:19:06 by ullorent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ Point.cpp \
 bsp.cpp
 
 CPPINCLUDE = Fixed.hpp \
+Point.hpp
 
 CPPOSRC = $(CPPSRC:.cpp=.o)
 

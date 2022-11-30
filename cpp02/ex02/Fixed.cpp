@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:33:22 by ullorent          #+#    #+#             */
-/*   Updated: 2022/11/25 16:45:42 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/11/30 10:17:48 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,24 @@
 //Fixed points are float numbers that do not change, so they are more "usable"
 Fixed::Fixed() : _value(0) {
 	//std::cout << "Default constructor called" << std::endl;
-	return;
 }
 
 Fixed::Fixed(const int p1) : _value(p1 << _bits) { //Int constant constructor to fixed point
 	//std::cout << "Int constructor called" << std::endl;
-	return ;
 }
 
 Fixed::Fixed(const float p1) : _value(0) { //Float constant constructor to fixed point
 	//std::cout << "Float constructor called" << std::endl;
 	setRawBits(roundf(p1 * (1 << _bits)));
-	return ;
 }
 
 Fixed::Fixed(const Fixed &p1) { //Copy of constructor
 	//std::cout << "Copy constructor called" << std::endl;
 	*this = p1;
-	return;
 }
 
 Fixed::~Fixed() {
 	//std::cout << "Destructor called" << std::endl;
-	return;
 }
 
 // --- Private variables --- //
@@ -167,16 +162,16 @@ Fixed Fixed::operator--(int) { //Post Decrement function (value--)
 // --- Member function 'min' and 'max' --- //
 Fixed &Fixed::min(Fixed &p1, Fixed &p2) { //Here we return the smallest NON-constant fixed point value
 	if (p1.getRawBits() < p2.getRawBits())
-		return (p2);
-	else
 		return (p1);
+	else
+		return (p2);
 }
 
 const Fixed &Fixed::min(const Fixed &p1, const Fixed &p2) { //Here we return the smallest constant fixed point value
 	if (p1.getRawBits() < p2.getRawBits())
-		return (p2);
-	else
 		return (p1);
+	else
+		return (p2);
 }
 
 Fixed &Fixed::max(Fixed &p1, Fixed &p2) { //Here we return the bigger NON-constant fixed point value
