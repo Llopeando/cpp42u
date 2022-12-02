@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 16:45:16 by ullorent          #+#    #+#             */
-/*   Updated: 2022/12/01 17:57:43 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/12/02 12:13:37 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ ClapTrap::ClapTrap() : _name("Missingno"), _hitpoints(10), _energypoints(10), _a
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitpoints(10), _energypoints(10), _attdamage(0){
 	std::cout << "Name constructor called" << std::endl;
+	std::cout << "\033[1;32m[--- " << _name << " has been created ---]\033[0m" << std::endl;
+	std::cout << "\033[1;37mAvailable Hit Points -> \033[33m(" << _hitpoints << ")\033[0m" << std::endl;
+	std::cout << "\033[1;37mAvailable Energy points -> \033[33m(" << _energypoints << ")\033[0m" << std::endl;
+	std::cout << "\033[1;37mAvailable Attack Damage -> \033[33m(" << _attdamage << ")\033[0m\n" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &raw) {
@@ -44,26 +48,57 @@ int	ClapTrap::getHitEnergyAttPoints(int boo) const {
 		return (this->_energypoints);
 	if (boo == 2)
 		return (this->_attdamage);
+	else
+		return (1);
+}
+
+void ClapTrap::setAttDamage(int attdamage) {
+	_attdamage = attdamage;
+	return ;
 }
 
 // --- Main functions --- //
 void ClapTrap::attack(std::string const &target) {
-	std::cout << "ClapTrap " << _name << " attacks " << target << "causing " << _attdamage << " points of damage!" << std::endl;
+	std::cout << "🗡️  \033[1;34mClapTrap " << _name << " attacks " << target << " causing " << _attdamage << " points of damage!" << std::endl;
 	return ;
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
-	if (amount < 0)
+	if ((int)amount < 0)
 	{
-		std::cout << "[!] It is not possible to take " << amount << " points of damage!";
-		return ;
+		std::cout << "\033[1;31mERROR 1 [!]\033[0m\n\033[1;37mIt is not possible to take negative points of damage! Check your main args. Exiting...\033[0m" << std::endl;
+		exit (1);
 	}
-	amount = _hitpoints;
-	std::cout << "ClapTrap " << _name << " received " << amount << " points of damage!" << std::endl;
+	if (amount > (unsigned int)_hitpoints)
+		amount = _hitpoints;
+	_hitpoints -= amount;
+	std::cout << "😵 \033[1;37mClapTrap " << _name << " received " << amount << " points of damage!\033[0m \033[4;31m(" << _hitpoints << " hit points left)\033[0m" << std::endl;
+	if (_hitpoints <= 0 && _energypoints <= 0)
+	{
+		std::cout << "💀 \033[1;31m" << _name << " has died!\033[0m" << std::endl;
+		_hitpoints = 0;
+	}
+	else if (_hitpoints <= 0 && _energypoints > 0)
+	{
+		std::cout << "💀 \033[1;31m" << _name << " has died but \033[4;32mhe can still regenerate\033[1;31m!\033[0m" << std::endl;
+		_hitpoints = 0;
+	}
 	return ;
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-	std::cout << "ClapTrap " << _name << " repaired " << amount << " energy points!" << std::endl;
+	if ((int)amount < 0)
+	{
+		std::cout << "\033[1;31mERROR 2 [!]\033[0m\n\033[1;37mIt is not possible to repair a negative energy points value! Check your main args. Exiting...\033[0m" << std::endl;
+		exit (2);
+	}
+	if (getHitEnergyAttPoints(1) < (int)amount)
+		std::cout << "❌ \033[1;37m" << _name << " could not be regenerated as it does not have sufficient energy points!\033[0m" << std::endl;
+	else
+	{
+		_energypoints -= amount;
+		_hitpoints += amount;
+		std::cout << "🧡 \033[1;37mClapTrap " << _name << " repaired " << amount << " energy points!\033[0m \033[4;32m(" << _energypoints << " energy points left)\033[0m / \033[4;31m(" << _hitpoints << ")\033[0m" << std::endl;
+	}
 	return ;
 }
