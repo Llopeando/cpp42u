@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 16:45:16 by ullorent          #+#    #+#             */
-/*   Updated: 2022/12/06 16:09:57 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/12/08 19:17:50 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,6 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _hitpoints(10), _energypoint
 	std::cout << "\033[1;37mAvailable Hit Points -> \033[33m(" << _hitpoints << ")\033[0m" << std::endl;
 	std::cout << "\033[1;37mAvailable Energy points -> \033[33m(" << _energypoints << ")\033[0m" << std::endl;
 	std::cout << "\033[1;37mAvailable Attack Damage -> \033[33m(" << _attdamage << ")\033[0m\n" << std::endl;
-}
-
-ClapTrap::ClapTrap(ClapTrap const &raw) {
-	std::cout << "Copy constructor called" << std::endl;
-	_name = raw.getName();
-	_hitpoints = raw.getHitEnergyAttPoints(0);
-	_energypoints = raw.getHitEnergyAttPoints(1);
-	_attdamage = raw.getHitEnergyAttPoints(2);
 }
 
 ClapTrap::~ClapTrap() {
