@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 16:45:16 by ullorent          #+#    #+#             */
-/*   Updated: 2022/12/08 19:17:50 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/12/09 13:53:41 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 // --- Constructors and destructor --- //
 ClapTrap::ClapTrap() : _name("Missingno"), _hitpoints(10), _energypoints(10), _attdamage(0) {
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "ClapTrap constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitpoints(10), _energypoints(10), _attdamage(0){
-	std::cout << "Name constructor called" << std::endl;
+	std::cout << "ClapTrap name constructor called" << std::endl;
 	std::cout << "\033[1;32m[--- " << _name << " has been created ---]\033[0m" << std::endl;
 	std::cout << "\033[1;37mAvailable Hit Points -> \033[33m(" << _hitpoints << ")\033[0m" << std::endl;
 	std::cout << "\033[1;37mAvailable Energy points -> \033[33m(" << _energypoints << ")\033[0m" << std::endl;
@@ -26,7 +26,7 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _hitpoints(10), _energypoint
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap destructor called" << std::endl;
 }
 
 // --- Getters --- //

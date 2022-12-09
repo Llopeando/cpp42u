@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 20:09:53 by ullorent          #+#    #+#             */
-/*   Updated: 2022/12/08 20:14:13 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/12/09 13:45:22 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,12 @@ class DiamondTrap : public FragTrap, public ScavTrap
 {
 	public:
 		DiamondTrap(/* args */);
+		DiamondTrap(std::string diamondname);
 		~DiamondTrap();
+
+		void	whoAmI();
 	private:
-		/* data */
+		std::string	_name;
 };
 
 #endif

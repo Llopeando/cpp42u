@@ -6,7 +6,7 @@
 #    By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/01 16:43:38 by ullorent          #+#    #+#              #
-#    Updated: 2022/12/08 20:09:00 by ullorent         ###   ########.fr        #
+#    Updated: 2022/12/09 13:41:09 by ullorent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ DiamondTrap.hpp
 
 CPPOSRC = $(CPPSRC:.cpp=.o)
 
-CPPFLAGS = -Wall -Werror -Wextra
+CPPFLAGS = -Wall -Werror -Wextra -Wshadow -Wno-shadow
 CLANGCMD = clang++
 
 all: $(NAME)

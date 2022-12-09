@@ -6,13 +6,14 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 09:54:24 by ullorent          #+#    #+#             */
-/*   Updated: 2022/12/08 20:05:43 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/12/09 13:40:01 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main() {
 	//Player creator
@@ -20,26 +21,35 @@ int main() {
 	ClapTrap	player2("eperaita");
 	ScavTrap	player3("zcanales");
 	FragTrap	player4("inunez-g");
+	DiamondTrap	player5("lbarture");
 	//Player names
 	std::string	player1name = "ecamara";
 	std::string	player2name = "eperaita";
 	std::string	player3name = "zcanales";
 	std::string	player4name = "inunez-g";
+	std::string	player5name = "lbarture";
 	//Player "strength"
 	int			player1attDamage = 5;
 	int			player2attDamage = 10;
 	int			player3attDamage = 7;
 	int			player4attDamage = 8;
+	int			player5attDamage = 4;
 
 	//Player "strength" setter
 	player1.setAttDamage(player1attDamage);
 	player2.setAttDamage(player2attDamage);
 	player4.setAttDamage(player4attDamage);
+	player5.setAttDamage(player5attDamage);
 
 	//The battle
 	player4.attack(player1name);
 	player1.takeDamage(player4attDamage);
 	player1.beRepaired(4);
+	std::cout << std::endl;
+	player3.attack(player5name);
+	player5.takeDamage(player3attDamage);
+	player5.beRepaired(7);
+	player5.whoAmI();
 	std::cout << std::endl;
 	player3.attack(player4name);
 	player4.takeDamage(player3attDamage);
