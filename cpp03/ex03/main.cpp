@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 09:54:24 by ullorent          #+#    #+#             */
-/*   Updated: 2022/12/09 13:40:01 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/12/14 12:13:22 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int main() {
 	//Player "strength" setter
 	player1.setAttDamage(player1attDamage);
 	player2.setAttDamage(player2attDamage);
+	player3.setAttDamage(player3attDamage);
 	player4.setAttDamage(player4attDamage);
 	player5.setAttDamage(player5attDamage);
 
