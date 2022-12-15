@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 17:05:21 by ullorent          #+#    #+#             */
-/*   Updated: 2022/12/14 17:16:06 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/12/15 13:15:28 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ class Dog : public Animal
 	public:
 		Dog();
 		~Dog();
-	private:
-		std::string type;
+
+		void	makeSound() const;
 };
 
 #endif

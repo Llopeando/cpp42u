@@ -6,7 +6,7 @@
 #    By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 16:59:55 by ullorent          #+#    #+#              #
-#    Updated: 2022/12/14 17:02:14 by ullorent         ###   ########.fr        #
+#    Updated: 2022/12/15 13:52:30 by ullorent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,14 @@ CPPSRC = main.cpp \
 Animal.cpp \
 Cat.cpp \
 Dog.cpp \
+WrongAnimal.cpp \
+WrongCat.cpp \
 
 CPPINCLUDE = Animal.hpp \
 Cat.hpp \
 Dog.hpp \
+WrongAnimal.hpp \
+WrongCat.hpp \
 
 CPPOSRC = $(CPPSRC:.cpp=.o)
 

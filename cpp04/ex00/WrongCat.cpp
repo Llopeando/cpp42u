@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 17:08:52 by ullorent          #+#    #+#             */
-/*   Updated: 2022/12/15 13:37:41 by ullorent         ###   ########.fr       */
+/*   Created: 2022/12/15 13:47:47 by ullorent          #+#    #+#             */
+/*   Updated: 2022/12/15 13:52:44 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
 // --- Constructors and destructor --- //
-Cat::Cat() : Animal("Cat") {
+WrongCat::WrongCat() : WrongAnimal("WrongCat") {
 	std::cout << "Cat constructor called" << std::endl;
 }
 
-Cat::~Cat() {
+WrongCat::~WrongCat() {
 	std::cout << "Cat destructor called" << std::endl;
 }
 
 // --- Functions --- //
-void	Cat::makeSound() const {
+void	WrongCat::makeSound() const {
 	std::cout << "\033[1;32m🐈 " << this->type << " makes some purRrRrRring\033[0m" << std::endl;
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 17:02:20 by ullorent          #+#    #+#             */
-/*   Updated: 2022/12/14 17:05:02 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/12/15 13:58:56 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,15 @@ class Animal
 {
 	public:
 		Animal();
-		~Animal();
+		Animal(std::string animaltype);
+		virtual ~Animal(); // With virtual we priorize the use of the subclass data instead of the base class data
+
+		virtual void	makeSound() const;
+
+		std::string	getType() const;
 	protected:
 		std::string	type;
 };
+std::ostream &operator<<(std::ostream &ost, Animal const &rhs);
 
 #endif

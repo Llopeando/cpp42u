@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 17:02:18 by ullorent          #+#    #+#             */
-/*   Updated: 2022/12/15 13:40:57 by ullorent         ###   ########.fr       */
+/*   Created: 2022/12/15 13:46:00 by ullorent          #+#    #+#             */
+/*   Updated: 2022/12/15 13:47:39 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
 // --- Constructors and destructor --- //
-Animal::Animal() : type("Missingno") {
-	std::cout << "Animal constructor called" << std::endl;
+WrongAnimal::WrongAnimal() : type("WrongMissingno") {
+	std::cout << "WrongAnimal constructor called" << std::endl;
 }
 
-Animal::Animal(std::string animaltype) : type(animaltype) {
-	std::cout << "Animal name constructor called" << std::endl;
+WrongAnimal::WrongAnimal(std::string animaltype) : type(animaltype) {
+	std::cout << "WrongAnimal name constructor called" << std::endl;
 }
 
-Animal::~Animal() {
-	std::cout << "Animal destructor called" << std::endl;
+WrongAnimal::~WrongAnimal() {
+	std::cout << "WrongAnimal destructor called" << std::endl;
 }
 
 // --- Data getters --- //
-std::string	Animal::getType() const {
+std::string	WrongAnimal::getType() const {
 	return (this->type);
 }
 
 // --- Functions --- //
-void	Animal::makeSound() const {
+void	WrongAnimal::makeSound() const {
 	std::cout << "\033[1;31m🤐 " << type << " makes the sound of nothingness\033[0m" << std::endl;
 	return ;
 }
 
-std::ostream &operator<<(std::ostream &ost, Animal const &rhs) {
+std::ostream &operator<<(std::ostream &ost, WrongAnimal const &rhs) {
 	ost << rhs.getType();
 	return (ost);
 }
