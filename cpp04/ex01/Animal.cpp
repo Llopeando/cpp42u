@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 17:02:18 by ullorent          #+#    #+#             */
-/*   Updated: 2022/12/15 13:40:57 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/12/21 16:44:46 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@ Animal::Animal() : type("Missingno") {
 
 Animal::Animal(std::string animaltype) : type(animaltype) {
 	std::cout << "Animal name constructor called" << std::endl;
+}
+
+Animal::Animal(const Animal &ref) {
+	std::cout << "Animal COPY constructor called" << std::endl;
+	*this = ref;
 }
 
 Animal::~Animal() {
@@ -36,7 +41,14 @@ void	Animal::makeSound() const {
 	return ;
 }
 
+// --- Overload operators --- //
 std::ostream &operator<<(std::ostream &ost, Animal const &rhs) {
 	ost << rhs.getType();
 	return (ost);
+}
+
+Animal	&Animal::operator=(const Animal &ref) {
+	if (this != &ref)
+		type = ref.getType();
+	return (*this);
 }
