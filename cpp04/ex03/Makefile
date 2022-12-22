@@ -6,15 +6,20 @@
 #    By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/22 16:42:14 by ullorent          #+#    #+#              #
-#    Updated: 2022/12/22 16:42:46 by ullorent         ###   ########.fr        #
+#    Updated: 2022/12/22 18:05:53 by ullorent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = interecap
 
 CPPSRC = main.cpp \
+AMateria.cpp \
+Ice.cpp \
+Cure.cpp \
 
-CPPINCLUDE = Animal.hpp \
+CPPINCLUDE = AMateria.hpp \
+Ice.hpp \
+Cure.hpp \
 
 CPPOSRC = $(CPPSRC:.cpp=.o)
 
