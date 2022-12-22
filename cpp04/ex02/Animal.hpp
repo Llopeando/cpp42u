@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 17:02:20 by ullorent          #+#    #+#             */
-/*   Updated: 2022/12/22 16:32:50 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/12/22 16:33:00 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Animal
 		Animal(const Animal &ref);
 		virtual ~Animal(); // With virtual we priorize the use of the subclass data instead of the base class data
 
-		virtual void	makeSound() const;
+		virtual void	makeSound() const = 0;
 
 		std::string	getType() const;
 

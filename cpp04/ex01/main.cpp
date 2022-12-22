@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 13:18:49 by ullorent          #+#    #+#             */
-/*   Updated: 2022/12/21 19:53:24 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/12/22 16:07:57 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main() {
 	Animal	*ani_array[4];
 
 	//Animal array filler
-	std::cout << "\033[1;32m[--- Animal array filter ---]\033[0m" << std::endl;
+	std::cout << "\033[1;32m[--- Animal array filler ---]\033[0m" << std::endl;
 	for (int c = 0; c < 4; c++)
 	{
 		if (c % 2)
@@ -33,6 +33,7 @@ int main() {
 	//Array destructor and cleaner
 	for (int c = 0; c < 4; c++)
 		delete	ani_array[c];
+	std::cout << "\033[1;32m[---------------------------]\033[0m" << std::endl;
 	std::cout << std::endl;
 
 	//Deep copy of Dog
@@ -42,10 +43,23 @@ int main() {
 	const Animal* cat = new Cat();
 
 	std::cout << "\n\033[1;37m-> First dog constructor <-\033[0m" << std::endl;
-	dogA();
+	Dog a;
 	std::cout << "\n\033[1;37m-> Copy dog constructor <-\033[0m" << std::endl;
-	dogB(dogA);
+	Dog b(a);
 	std::cout << std::endl;
+
+	std::cout << "🧠 [A Dog Idea Nº1] " << a.dogIdeaGetter(1) << std::endl;
+	std::cout << "🧠 [B Dog Idea Nº1] " << b.dogIdeaGetter(1) << "\n" << std::endl;
+	
+	a.dogIdeaSetter(1, "Hi, im Dog A");
+	b = a;
+
+	std::cout << "\n🧠 [A Dog Idea Nº1] " << a.dogIdeaGetter(1) << std::endl;
+	std::cout << "🧠 [B Dog Idea Nº1] " << b.dogIdeaGetter(1) << std::endl;
+	std::cout << std::endl;
+
+	delete dog;
+	delete cat;
 
 	return (0);
 }

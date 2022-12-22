@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 17:08:31 by ullorent          #+#    #+#             */
-/*   Updated: 2022/12/22 15:45:09 by ullorent         ###   ########.fr       */
+/*   Created: 2022/12/19 13:12:33 by ullorent          #+#    #+#             */
+/*   Updated: 2022/12/21 19:14:22 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP_
-#define CAT_HPP_
+#ifndef BRAIN_HPP_
+#define BRAIN_HPP_
 #include "Animal.hpp"
-#include "Brain.hpp"
+#include <string>
+#include <iostream>
 
-class Cat : public Animal
+class Brain
 {
 	public:
-		Cat();
-		Cat(const Cat &ref);
-		virtual ~Cat();
+		Brain();
+		Brain(const Brain &ref);
+		~Brain();
 
-		virtual void	makeSound() const;
-		std::string		catIdeaGetter(int array_pos);
-		void			catIdeaSetter(int array_pos, std::string idea);
+		Brain	&operator=(const Brain &ref);
 
-		Cat &operator=(Cat const &rhs);
+		std::string	getIdeas(int array_pos) const;
+		void		setIdeas(int array_pos, std::string idea);
 	private:
-		Brain	*brain;
+		std::string ideas[100];
 };
-std::ostream &operator<<(std::ostream &ost, Animal const &rhs);
 
 #endif
