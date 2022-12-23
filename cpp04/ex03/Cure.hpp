@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 18:08:21 by ullorent          #+#    #+#             */
-/*   Updated: 2022/12/22 18:58:04 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/12/23 13:06:51 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Cure : public AMateria
 		virtual ~Cure();
 
 		virtual Cure	*clone() const;
-		//virtual void use(ICharacter& target);
+		virtual void use(ICharacter& target);
 };
 
 #endif

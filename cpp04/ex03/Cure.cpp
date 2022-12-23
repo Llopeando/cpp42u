@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 18:08:00 by ullorent          #+#    #+#             */
-/*   Updated: 2022/12/22 18:58:26 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/12/23 13:13:32 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ Cure	*Cure::clone() const {
 	return (realmateria);
 }
 
-// void	Cure::use(ICharacter &target) {
-// 	std::cout << "* heals " << name << "'s wounds" << std::endl;
-// }
+void	Cure::use(ICharacter &target) {
+	std::cout << "* heals " << target.getName() << "'s wounds" << std::endl;
+}

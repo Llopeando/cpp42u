@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 18:06:35 by ullorent          #+#    #+#             */
-/*   Updated: 2022/12/22 18:38:12 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/12/23 13:13:46 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ Ice	*Ice::clone() const {
 	return (realmateria);
 }
 
-// void	Ice::use(ICharacter &target) {
-// 	std::cout << "* shoots an ice bolt at " << name << " *" << std::endl;
-// }
+void	Ice::use(ICharacter &target) {
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+}

@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 18:06:42 by ullorent          #+#    #+#             */
-/*   Updated: 2022/12/22 18:41:16 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/12/23 12:57:47 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Ice : public AMateria
 		virtual ~Ice();
 
 		virtual Ice	*clone() const;
-		//virtual void use(ICharacter& target);
+		virtual void use(ICharacter& target);
 };
 
 #endif

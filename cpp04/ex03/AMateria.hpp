@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 18:01:04 by ullorent          #+#    #+#             */
-/*   Updated: 2022/12/22 18:37:59 by ullorent         ###   ########.fr       */
+/*   Updated: 2022/12/23 13:40:46 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class AMateria
 		std::string const & getType() const; //Returns the materia type
 
 		virtual AMateria* clone() const = 0;
-		//virtual void use(ICharacter& target);
+		// virtual void use(ICharacter& target);
 	protected:
 		std::string	type;
 };
