@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 12:58:39 by ullorent          #+#    #+#             */
-/*   Updated: 2022/12/23 14:04:42 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/01/03 16:45:35 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ Character::Character() {
 Character::Character(const std::string &name_ref) {
 	std::cout << "Character NAME constructor called" << std::endl;
 	name = name_ref;
-	for (int c = 0; c < 3; c++)
+	for (int c = 0; c < 4; c++)
 	{
 		std::cout << c << std::endl;
-		inventory[c] = 0;
+		inventory[c] = NULL;
 	}
 }
 
@@ -44,7 +44,16 @@ std::string	const &Character::getName() const {
 void	Character::equip(AMateria *m) {
 	for (int c = 0; c < 4; c++)
 	{
-		if (c < 3)
+		if (inventory[c] == NULL)
 			inventory[c] = m;
 	}
+}
+
+void	Character::unequip(int	idx) {
+	if (idx < 4)
+		inventory[idx] = NULL;
+}
+
+void	Character::use(int idx, ICharacter &target) {
+	inventory[idx]->use(target);
 }

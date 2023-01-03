@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 18:27:10 by ullorent          #+#    #+#             */
-/*   Updated: 2023/01/03 16:08:02 by ullorent         ###   ########.fr       */
+/*   Created: 2023/01/03 16:22:32 by ullorent          #+#    #+#             */
+/*   Updated: 2023/01/03 17:40:22 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP_
-#define ICHARACTER_HPP_
+#ifndef MATERIASOURCE_HPP_
+#define MATERIASOURCE_HPP_
+#include "AMateria.hpp"
+#include "IMateriaSource.hpp"
 
-
-class AMateria;
-class ICharacter
+class MateriaSource : public IMateriaSource
 {
 	public:
-		virtual ~ICharacter() {}
+		MateriaSource();
+		MateriaSource(const MateriaSource &ref);
+		virtual	~MateriaSource();
 
-		virtual std::string const & getName() const = 0;
-
-		virtual void equip(AMateria* m) = 0;
-		virtual void unequip(int idx) = 0;
-		virtual void use(int idx, ICharacter& target) = 0;
+		// IMateriaSource interface functions redefinition
+		void	learnMateria(AMateria* src);
+		AMateria*	createMateria(std::string const &type);
+	private:
+		AMateria* inventory[4];
 };
-
-#include "AMateria.hpp"
 
 #endif

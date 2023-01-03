@@ -6,7 +6,7 @@
 #    By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/22 16:42:14 by ullorent          #+#    #+#              #
-#    Updated: 2022/12/23 13:40:23 by ullorent         ###   ########.fr        #
+#    Updated: 2023/01/03 17:38:45 by ullorent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,12 +17,15 @@ AMateria.cpp \
 Ice.cpp \
 Cure.cpp \
 Character.cpp \
+MateriaSource.cpp \
 
 CPPINCLUDE = AMateria.hpp \
 Ice.hpp \
 Cure.hpp \
 Character.hpp \
 ICharacter.hpp \
+MateriaSource.hpp \
+IMateriaSource.hpp \
 
 CPPOSRC = $(CPPSRC:.cpp=.o)
 
