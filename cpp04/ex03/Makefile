@@ -6,7 +6,7 @@
 #    By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/22 16:42:14 by ullorent          #+#    #+#              #
-#    Updated: 2023/01/03 17:38:45 by ullorent         ###   ########.fr        #
+#    Updated: 2023/01/09 18:47:52 by ullorent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ IMateriaSource.hpp \
 
 CPPOSRC = $(CPPSRC:.cpp=.o)
 
-CPPFLAGS = -Wall -Werror -Wextra -Wshadow -Wno-shadow -g3 -fsanitize=address
+CPPFLAGS = -Wall -Werror -Wextra -Wshadow -Wno-shadow
 CLANGCMD = clang++
 
 all: $(NAME)

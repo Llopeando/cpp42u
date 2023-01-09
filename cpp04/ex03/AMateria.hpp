@@ -6,15 +6,15 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 18:01:04 by ullorent          #+#    #+#             */
-/*   Updated: 2023/01/03 16:12:13 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/01/09 18:11:05 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef AMATERIA_HPP_
 #define AMATERIA_HPP_
 #include <iostream>
-#include "ICharacter.hpp"
 
+class ICharacter;
 class AMateria
 {
 	public:
@@ -23,10 +23,10 @@ class AMateria
 		AMateria(const AMateria &ref);
 		virtual ~AMateria();
 
-		std::string const & getType() const; //Returns the materia type
 
-		virtual AMateria* clone() const = 0;
+		virtual AMateria* clone() const = 0; //This is a class that should be defined by inheritance classes
 		virtual void use(ICharacter& target);
+		std::string const & getType() const; //Returns the materia type
 	protected:
 		std::string	type;
 };
