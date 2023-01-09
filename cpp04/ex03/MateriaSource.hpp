@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:22:32 by ullorent          #+#    #+#             */
-/*   Updated: 2023/01/09 17:28:51 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/01/09 18:55:48 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class MateriaSource : public IMateriaSource
 		MateriaSource(const MateriaSource &ref);
 		~MateriaSource();
 
-		// IMateriaSource interface functions redefinition
+		//IMateriaSource interface functions redefinition
 		void	learnMateria(AMateria* src);
 		AMateria*	createMateria(std::string const &type);
 	private:

@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 18:01:07 by ullorent          #+#    #+#             */
-/*   Updated: 2023/01/09 18:51:51 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/01/09 18:55:22 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ std::string const &AMateria::getType() const {
 }
 
 void	AMateria::use(ICharacter &target) {
-	std::cout << "* " << target.getName() << " makes random materia things *" << std::endl;
+	std::cout << "\033[1;37m* " << target.getName() << " makes random materia things *\033[0m" << std::endl;
 }

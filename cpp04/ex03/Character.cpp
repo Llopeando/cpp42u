@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 12:58:39 by ullorent          #+#    #+#             */
-/*   Updated: 2023/01/09 18:51:44 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/01/09 19:13:11 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,17 +55,20 @@ void	Character::equip(AMateria *m) {
 }
 
 void	Character::unequip(int	idx) {
-	if (idx < 4)
+	if (idx < 3)
+	{
 		inventory[idx] = NULL;
+		std::cout << "🗜️ \033[1;33m Materia \033[1;32m" << idx << " \033[1;33mhas been unequiped from Character \033[1;32m" << this->name << "\033[0m" << std::endl;
+	}
 }
 
 void	Character::use(int idx, ICharacter &target) {
 	if ((idx > 3 || idx < 0) || inventory[idx] == NULL)
 	{
 		if (idx > 3 || idx < 0)
-			std::cout << "\033[1;31m[!] This index value \033[37m(" << idx << ") \033[31mits out of bound\033[0m" << std::endl;
+			std::cout << "❌ \033[1;31mThe index value \033[37m" << idx << " \033[31mits out of bound\033[0m" << std::endl;
 		else
-			std::cout << "\033[1;31m[!] This index value \033[37m(" << idx << ") \033[31mits not available in the inventory\033[0m" << std::endl;
+			std::cout << "❌ \033[1;31mThe index value \033[37m" << idx << " \033[31mits not available in the inventory. It has been unequiped?\033[0m" << std::endl;
 		return ;
 	}
 	inventory[idx]->use(target);
