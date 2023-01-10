@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 12:58:39 by ullorent          #+#    #+#             */
-/*   Updated: 2023/01/09 19:13:11 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/01/10 12:20:18 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void	Character::equip(AMateria *m) {
 void	Character::unequip(int	idx) {
 	if (idx < 3)
 	{
+		delete inventory[idx];
 		inventory[idx] = NULL;
 		std::cout << "🗜️ \033[1;33m Materia \033[1;32m" << idx << " \033[1;33mhas been unequiped from Character \033[1;32m" << this->name << "\033[0m" << std::endl;
 	}

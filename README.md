@@ -15,7 +15,7 @@
 | C++ 01 | Finalizado 🟢 | ✅ **100** |
 | C++ 02 | Finalizado 🟢 | ✅ **100** |
 | C++ 03 | Finalizado 🟢 | ✅ **100** |
-| C++ 04 | En proceso 🟠 | ❓❓❓ |
+| C++ 04 | Finalizado 🟢 | ✅ **100** |
 | C++ 05 | En proceso 🟠 | ❓❓❓ |
 | C++ 06 | Sin empezar 🔴 | ❓❓❓ |
 | C++ 07 | Sin empezar 🔴 | ❓❓❓ |

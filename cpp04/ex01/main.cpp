@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 13:18:49 by ullorent          #+#    #+#             */
-/*   Updated: 2022/12/22 16:07:57 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/01/10 12:35:02 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int main() {
 	std::cout << "🧠 [B Dog Idea Nº1] " << b.dogIdeaGetter(1) << "\n" << std::endl;
 	
 	a.dogIdeaSetter(1, "Hi, im Dog A");
-	b = a;
+	b = a; //With this, we can deep copy the 'a' dog data
 
 	std::cout << "\n🧠 [A Dog Idea Nº1] " << a.dogIdeaGetter(1) << std::endl;
 	std::cout << "🧠 [B Dog Idea Nº1] " << b.dogIdeaGetter(1) << std::endl;

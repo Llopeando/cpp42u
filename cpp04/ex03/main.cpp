@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 18:39:12 by ullorent          #+#    #+#             */
-/*   Updated: 2023/01/09 19:18:39 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/01/10 12:37:49 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,13 @@ int	main() {
 
 	ullorent->unequip(1);
 	ullorent->use(1, *ecamara); //This will give an error as the second (which is number 1) Materia does not exist
+	tmp = src->createMateria("ice"); //Here we reasign the Materia to the first character
+	ullorent->equip(tmp);
+	ullorent->use(1, *ecamara);
+
+	tmp = src->createMateria("ice"); //Here we create the Materia and equip the Character with the Materia
+	ecamara->equip(tmp);
+	ecamara->use(0, *ullorent);
 
 	delete ecamara;
 	delete ullorent;
