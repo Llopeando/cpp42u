@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 17:07:46 by ullorent          #+#    #+#             */
-/*   Updated: 2023/01/11 19:09:13 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/01/11 19:16:39 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ class Bureaucrat
 
 		//Overload operators
 		Bureaucrat	&operator=(const Bureaucrat &ref);
-	private:
+	protected:
 		std::string const name;
 		int grade;
 };
