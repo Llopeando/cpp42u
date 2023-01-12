@@ -6,14 +6,17 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 17:07:46 by ullorent          #+#    #+#             */
-/*   Updated: 2023/01/11 19:16:39 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/01/12 19:38:32 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP_
 #define BUREAUCRAT_HPP_
 #include <iostream>
+#include <stdexcept>
+#include "Form.hpp"
 
+class Form;
 class Bureaucrat
 {
 	public:
@@ -28,22 +31,23 @@ class Bureaucrat
 		void	setPlusGrade();
 		void	setMinusGrade();
 
+		//Functions
+		void	signForm(const Form &ref);
+
 		//Exception thowers and functions
-		class GradeTooHighException : public std::exception {
-			public:
-				virtual const char* what() const throw(); //With this, we can inherit std::exception so we can redefine it with a custom exception message in base class
+		class GradeTooHighException : public std::exception {  //We should specify that exception is public, because if not, it will be private as it is a class
+			virtual const char* what() const throw(); //With this, we can inherit std::exception so we can redefine it with a custom exception message in base class
 		};
 
 		class GradeTooLowException : public std::exception {
-			public:
-				virtual const char* what() const throw();
+			virtual const char* what() const throw();
 		};
 
 		void	msgExceptionCheck(int grade);
 
 		//Overload operators
 		Bureaucrat	&operator=(const Bureaucrat &ref);
-	protected:
+	private:
 		std::string const name;
 		int grade;
 };

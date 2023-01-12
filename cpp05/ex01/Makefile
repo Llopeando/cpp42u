@@ -6,16 +6,18 @@
 #    By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/10 16:11:39 by ullorent          #+#    #+#              #
-#    Updated: 2023/01/11 19:11:21 by ullorent         ###   ########.fr        #
+#    Updated: 2023/01/12 18:17:15 by ullorent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = bureaucrat
+NAME = maggots
 
 CPPSRC = main.cpp \
 Bureaucrat.cpp \
+Form.cpp \
 
 CPPINCLUDE = Bureaucrat.hpp \
+Form.hpp \
 
 CPPOSRC = $(CPPSRC:.cpp=.o)
 

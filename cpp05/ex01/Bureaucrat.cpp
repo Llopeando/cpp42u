@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 17:12:43 by ullorent          #+#    #+#             */
-/*   Updated: 2023/01/11 19:04:19 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/01/12 19:41:48 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,11 @@ std::ostream & operator<<(std::ostream &o, Bureaucrat const &rhs) {
 }
 
 // --- Functions --- //
-void	Bureaucrat::msgExceptionCheck(int grade) {
-	if (grade > 150)
-		throw GradeTooLowException();
-	else if (grade < 1)
-		throw GradeTooHighException();
+void	Bureaucrat::signForm(const Form &ref) {
+	if (ref.getBoolVal() == true)
+		std::cout << this->name << " signed " << ref.getFormName() << std::endl;
+	else
+		std::cout << this->name << " couldn't sign " << ref.getFormName() << " because yes" << std::endl;
 }
 
 // --- Getters and setters --- //
@@ -78,4 +78,11 @@ const char	*Bureaucrat::GradeTooHighException::what() const throw() {
 
 const char	*Bureaucrat::GradeTooLowException::what() const throw() {
 	return ("The grade is lower than the lowest possible grade!");
+}
+
+void	Bureaucrat::msgExceptionCheck(int grade) {
+	if (grade > 150)
+		throw GradeTooLowException();
+	else if (grade < 1)
+		throw GradeTooHighException();
 }
