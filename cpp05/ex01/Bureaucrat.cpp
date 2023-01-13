@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 17:12:43 by ullorent          #+#    #+#             */
-/*   Updated: 2023/01/12 19:41:48 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/01/13 18:54:20 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,19 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &ref) {
 }
 
 std::ostream & operator<<(std::ostream &o, Bureaucrat const &rhs) {
-	o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << std::endl;
+	o << "ℹ️  " << rhs.getName() << " Bureaucrat grade: " << rhs.getGrade() << std::endl;
 	return (o);
 }
 
 // --- Functions --- //
-void	Bureaucrat::signForm(const Form &ref) {
-	if (ref.getBoolVal() == true)
-		std::cout << this->name << " signed " << ref.getFormName() << std::endl;
-	else
-		std::cout << this->name << " couldn't sign " << ref.getFormName() << " because yes" << std::endl;
+void	Bureaucrat::signForm(Form &ref) {
+	try {
+		ref.beSigned(*this);
+		std::cout << "🖊️  \033[1;33m"<< this->name << " signed " << ref.getFormName() << "\033[0m" << std::endl;
+	}
+	catch (std::exception &excp) {
+		std::cout << "\033[1;33m[./maggots EXCEPTION]\033[1;31m " << this->name << " couldn't sign " << ref.getFormName() << " because \033[1;37m[" << excp.what() << "]\033[0m" << std::endl;
+	}
 }
 
 // --- Getters and setters --- //
@@ -62,12 +65,12 @@ int	Bureaucrat::getGrade() const {
 }
 
 void Bureaucrat::setPlusGrade() {
-	this->grade++;
+	this->grade--;
 	msgExceptionCheck(this->grade);
 }
 
 void Bureaucrat::setMinusGrade() {
-	this->grade--;
+	this->grade++;
 	msgExceptionCheck(this->grade);
 }
 

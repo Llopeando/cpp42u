@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 19:12:28 by ullorent          #+#    #+#             */
-/*   Updated: 2023/01/12 19:36:27 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/01/13 18:49:13 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ Form::~Form() {
 // }
 
 std::ostream	&operator<<(std::ostream &o, Form const &ref) {
-	o << ref.getFormName() << ", which the Form Grade is " << ref.getFormGrades(1) << " and the Execute grade is " << ref.getFormGrades(0) << " | By the way, the form is signed? " << ref.getBoolVal() << std::endl;
+	o << "ℹ️  [" << ref.getFormName() << "] | Form Grade: " << ref.getFormGrades(1) << " | Execute grade: " << ref.getFormGrades(0) << " | The form is signed? " << ref.getBoolVal() << std::endl;
 	return (o);
 }
 
@@ -71,11 +71,11 @@ void	Form::beSigned(const Bureaucrat &ref) {
 
 // --- Exceptions --- //
 const char	*Form::GradeTooHighException::what() const throw() {
-	return ("The form grade is higher than the highest possible form grade!");
+	return ("The form grade is too high!");
 }
 
 const char	*Form::GradeTooLowException::what() const throw() {
-	return ("The form grade is lower than the lowest possible form grade!");
+	return ("The form grade is too low!");
 }
 
 void	Form::msgExceptionCheck(int formGrade, int executeGrade) {

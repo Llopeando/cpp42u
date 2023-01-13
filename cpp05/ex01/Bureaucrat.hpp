@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 17:07:46 by ullorent          #+#    #+#             */
-/*   Updated: 2023/01/12 19:38:32 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/01/13 16:42:25 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Bureaucrat
 		void	setMinusGrade();
 
 		//Functions
-		void	signForm(const Form &ref);
+		void	signForm(Form &ref);
 
 		//Exception thowers and functions
 		class GradeTooHighException : public std::exception {  //We should specify that exception is public, because if not, it will be private as it is a class

@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 17:12:43 by ullorent          #+#    #+#             */
-/*   Updated: 2023/01/11 19:04:19 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/01/13 18:50:14 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,12 @@ int	Bureaucrat::getGrade() const {
 }
 
 void Bureaucrat::setPlusGrade() {
-	this->grade++;
+	this->grade--;
 	msgExceptionCheck(this->grade);
 }
 
 void Bureaucrat::setMinusGrade() {
-	this->grade--;
+	this->grade++;
 	msgExceptionCheck(this->grade);
 }
 
