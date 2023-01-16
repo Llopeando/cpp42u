@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 19:11:43 by ullorent          #+#    #+#             */
-/*   Updated: 2023/01/16 17:08:48 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/01/16 17:40:49 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
-class Form
+class AForm
 {
 	public:
-		Form();
-		Form(std::string const newSignName, int const newFormGrade, int const newExecuteGrade);
-		Form(const Form &ref);
-		~Form();
+		AForm();
+		AForm(std::string const newSignName, int const newFormGrade, int const newExecuteGrade);
+		AForm(const AForm &ref);
+		virtual ~AForm();
 
 		//Setters and getters
-		std::string	getFormName() const;
-		int			getFormGrades(int boo) const;
-		bool		getBoolVal() const;
+		virtual std::string	getFormName() const = 0;
+		virtual int			getFormGrades(int boo) const = 0;
+		virtual bool		getBoolVal() const = 0;
 
 		//Functions
 		void	beSigned(const Bureaucrat &ref);
@@ -41,16 +41,20 @@ class Form
 			virtual const char *what() const throw();
 		};
 
+		class	GradeForASCIITreeInvalidException : public std::exception {
+			virtual const char *what() const throw();
+		};
+
 		void	msgExceptionCheck(int formGrade, int executeGrade);
 
 		//Overload operators
-		Form	&operator=(const Form &ref);
+		AForm	&operator=(const AForm &ref);
 	private:
 		std::string const formName;
 		bool isSigned;
 		int const signFormGrade;
 		int const signExecuteGrade;
 };
-std::ostream	&operator<<(std::ostream &o, Form const &ref);
+std::ostream	&operator<<(std::ostream &o, AForm const &ref);
 
 #endif
