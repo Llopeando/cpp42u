@@ -6,12 +6,11 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 17:14:41 by ullorent          #+#    #+#             */
-/*   Updated: 2023/01/16 17:46:26 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/01/17 16:08:34 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
-#include <fstream>
 
 // --- Constructors and destructor --- //
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Missingo", 145, 137) {
@@ -28,15 +27,21 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
 }
 
 // --- Functions --- //
-void	ShrubberyCreationForm::asciiTree(const Bureaucrat &ref) const {
-	if (this->getFormGrades(1) < ref.getGrade() || this->getFormGrades(0) < ref.getGrade())
+void	ShrubberyCreationForm::execute(const Bureaucrat &ref) const {
+	if (this->getFormGrades(1) > 145 || this->getFormGrades(0) > 137)
 		throw AForm::GradeForASCIITreeInvalidException();
 	else {
-		std::ofstream outfile("<target>_shrubbery.tree");
-		outfile << "Test" << std::endl;
-		outfile << "It" << std::endl;
-		outfile << "probably" << std::endl;
-		outfile << "works!" << std::endl;
+		std::string bureaucrat_file_name = ref.getName() + "_shrubbery.tree";
+		std::ofstream outfile(bureaucrat_file_name);
+		outfile << "            ." << std::endl;
+		outfile << "           Ao" << std::endl;
+		outfile << "          AAAA" << std::endl;
+		outfile << "         AAoAAA" << std::endl;
+		outfile << "        AAAAAAAA" << std::endl;
+		outfile << "       AAAAAAAoAA" << std::endl;
+		outfile << "      AAoAAAAAAAAA" << std::endl;
+		outfile << "     AAAAAAoAAAAoAA" << std::endl;
+		outfile << "          AAAA" << std::endl;
 
 		outfile.close();
 	}

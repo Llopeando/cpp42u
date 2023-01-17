@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 19:11:43 by ullorent          #+#    #+#             */
-/*   Updated: 2023/01/16 17:40:49 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/01/17 15:38:54 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,13 @@ class AForm
 		virtual ~AForm();
 
 		//Setters and getters
-		virtual std::string	getFormName() const = 0;
-		virtual int			getFormGrades(int boo) const = 0;
-		virtual bool		getBoolVal() const = 0;
+		std::string	getFormName() const;
+		int			getFormGrades(int boo) const;
+		bool		getBoolVal() const;
 
 		//Functions
 		void	beSigned(const Bureaucrat &ref);
+		virtual void	execute(Bureaucrat const & executor) const = 0;
 
 		//Exception throwers and functions
 		class	GradeTooHighException : public std::exception {  //We should specify that exception is public, because if not, it will be private as it is a class

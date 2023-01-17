@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 19:12:28 by ullorent          #+#    #+#             */
-/*   Updated: 2023/01/16 17:43:50 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/01/17 15:18:39 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ AForm::~AForm() {
 
 // --- Overload operators --- //
 AForm	&AForm::operator=(const AForm &ref) {
-	std::cout << "Form assignation operator called (=)" << std::endl;
+	std::cout << "AForm assignation operator called (=)" << std::endl;
 	this->isSigned = ref.getBoolVal();
 	return (*this);
 }
 
 std::ostream	&operator<<(std::ostream &o, AForm const &ref) {
-	o << "ℹ️  [" << ref.getFormName() << "] | Form Grade: " << ref.getFormGrades(1) << " | Execute grade: " << ref.getFormGrades(0) << " | The form is signed? " << ref.getBoolVal() << std::endl;
+	o << "ℹ️  [" << ref.getFormName() << "] | AForm Grade: " << ref.getFormGrades(1) << " | Execute grade: " << ref.getFormGrades(0) << " | The form is signed? " << ref.getBoolVal() << std::endl;
 	return (o);
 }
 

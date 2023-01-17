@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 17:12:43 by ullorent          #+#    #+#             */
-/*   Updated: 2023/01/16 17:42:57 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/01/17 15:32:20 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,25 @@ void	Bureaucrat::signForm(AForm &ref) {
 	}
 	catch (std::exception &excp) {
 		std::cout << "\033[1;33m[./maggots EXCEPTION]\033[1;31m " << this->name << " couldn't sign " << ref.getFormName() << " because \033[1;37m[" << excp.what() << "]\033[0m" << std::endl;
+	}
+}
+
+void	Bureaucrat::executeCheck(AForm &ref) {
+	try {
+		ref.beSigned(*this);
+	}
+	catch (std::exception &excp) {
+		std::cout << "\033[1;33m[./maggots EXCEPTION]\033[1;31m " << this->name << " couldn't execute the " << ref.getFormName() << " form action due to  \033[1;37m[" << excp.what() << "]\033[0m" << std::endl;		
+	}
+}
+
+void	Bureaucrat::executeForm(AForm const &ref) {
+	try {
+		ref.execute(*this);
+		std::cout << this->getName() << " executed " << ref.getFormName() << std::endl;
+	}
+	catch (std::exception &excp) {
+		std::cout << "\033[1;33m[./maggots EXCEPTION]\033[1;31m " << this->name << " couldn't execute " << ref.getFormName() << " because \033[1;37m[" << excp.what() << "]\033[0m" << std::endl;
 	}
 }
 

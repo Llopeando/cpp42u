@@ -6,7 +6,7 @@
 #    By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/10 16:11:39 by ullorent          #+#    #+#              #
-#    Updated: 2023/01/16 17:40:17 by ullorent         ###   ########.fr        #
+#    Updated: 2023/01/17 16:05:55 by ullorent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,7 @@ $(NAME): $(CPPOSRC) $(CPPINCLUDE)
 clean:
 	@rm -rf *.o
 	@rm -rf *.dSYM
+	@rm -rf *.tree
 
 fclean: clean
 	@rm -rf $(NAME)
