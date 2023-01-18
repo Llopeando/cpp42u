@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 17:13:39 by ullorent          #+#    #+#             */
-/*   Updated: 2023/01/18 16:42:20 by ullorent         ###   ########.fr       */
+/*   Created: 2023/01/18 16:14:41 by ullorent          #+#    #+#             */
+/*   Updated: 2023/01/18 16:38:22 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERY_CREATION_FORM_HPP
-#define SHRUBBERY_CREATION_FORM_HPP
+#ifndef PRESIDENTIAL_PARDON_FORM_HPP_
+#define PRESIDENTIAL_PARDON_FORM_HPP_
 #include <iostream>
-#include <fstream>
 #include "AForm.hpp"
 
-class ShrubberyCreationForm : public AForm
+class PresidentialPardonForm : public AForm
 {
 	public:
-		ShrubberyCreationForm();
-		ShrubberyCreationForm(std::string const &targetName);
-		ShrubberyCreationForm(const ShrubberyCreationForm &ref);
-		~ShrubberyCreationForm();
+		PresidentialPardonForm();
+		PresidentialPardonForm(std::string const &targetName);
+		PresidentialPardonForm(const PresidentialPardonForm &ref);
+		~PresidentialPardonForm();
 
 		void	execute(const Bureaucrat &ref) const;
 
-		ShrubberyCreationForm	&operator=(const ShrubberyCreationForm &ref);
+		PresidentialPardonForm	&operator=(const PresidentialPardonForm &ref);
 };
 
 #endif

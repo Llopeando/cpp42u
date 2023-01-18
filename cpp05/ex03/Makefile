@@ -6,7 +6,7 @@
 #    By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/10 16:11:39 by ullorent          #+#    #+#              #
-#    Updated: 2023/01/18 16:22:58 by ullorent         ###   ########.fr        #
+#    Updated: 2023/01/18 17:00:47 by ullorent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ all: $(NAME)
 
 $(NAME): $(CPPOSRC) $(CPPINCLUDE)
 	@$(CLANGCMD) $(CPPFLAGS) $(CPPOSRC) -I. -o $(NAME)
-	@echo "\033[92mcpp05/ex02 has been successfully compiled!\033[0m"
+	@echo "\033[92mcpp05/ex03 has been successfully compiled!\033[0m"
 
 clean:
 	@rm -rf *.o
