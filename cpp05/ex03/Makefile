@@ -6,7 +6,7 @@
 #    By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/10 16:11:39 by ullorent          #+#    #+#              #
-#    Updated: 2023/01/18 17:00:47 by ullorent         ###   ########.fr        #
+#    Updated: 2023/01/19 16:51:26 by ullorent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,12 +18,14 @@ AForm.cpp \
 ShrubberyCreationForm.cpp \
 RobotomyRequestForm.cpp \
 PresidentialPardonForm.cpp \
+Intern.cpp \
 
 CPPINCLUDE = Bureaucrat.hpp \
 AForm.hpp \
 ShrubberyCreationForm.hpp \
 RobotomyRequestForm.hpp \
 PresidentialPardonForm.hpp \
+Intern.hpp \
 
 CPPOSRC = $(CPPSRC:.cpp=.o)
 

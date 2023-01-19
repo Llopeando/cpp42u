@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 17:14:41 by ullorent          #+#    #+#             */
-/*   Updated: 2023/01/18 16:54:34 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/01/19 17:19:54 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ShrubberyCreationForm::ShrubberyCreationForm() : AForm("MissingoShrubbery", 145,
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const &targetName) : AForm(targetName, 145, 137) {
-	//std::cout << "ShrubberyCreationForm NAME constructor called" << std::endl;
+	std::cout << "ShrubberyCreationForm NAME constructor called" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &ref) {
