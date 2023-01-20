@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 17:12:43 by ullorent          #+#    #+#             */
-/*   Updated: 2023/01/18 16:50:07 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/01/20 15:37:23 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	Bureaucrat::executeCheck(AForm &ref) {
 void	Bureaucrat::executeForm(AForm const &ref) {
 	try {
 		ref.execute(*this);
-		std::cout << "ℹ️  \033[1;37m[" << this->getName() << " executed " << ref.getFormName() << "]\033[0m" << std::endl;
+		std::cout << "ℹ️  \033[1;37m" << this->getName() << " executed " << ref.getFormName() << "\033[0m" << std::endl;
 	}
 	catch (std::exception &excp) {
 		std::cout << "\033[1;33m[./formnt EXCEPTION]\033[1;31m " << this->name << " could not execute " << ref.getFormName() << " because \033[1;37m[" << excp.what() << "]\033[0m" << std::endl;

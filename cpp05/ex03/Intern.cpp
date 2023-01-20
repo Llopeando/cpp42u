@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 15:37:16 by ullorent          #+#    #+#             */
-/*   Updated: 2023/01/19 17:15:32 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/01/20 15:44:40 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,15 @@
 
 // --- Constructors and destructor --- //
 Intern::Intern() {
+	// Actions functions names creator
+	actions[0] = &Intern::PresidentialExecution;
+	actions[1] = &Intern::RobotomyExecution;
+	actions[2] = &Intern::ShrubberyExecution;
+
+	// Form actions names creator
+	formActionsNames[0] = "presidential";
+	formActionsNames[1] = "robotomy";
+	formActionsNames[2] = "shrubbery";
 	std::cout << "Intern constructor called" << std::endl;
 }
 
@@ -24,6 +33,14 @@ Intern::Intern(const Intern &ref) {
 
 Intern::~Intern() {
 	std::cout << "Intern destructor called" << std::endl;
+}
+
+// --- Overload operator --- //
+Intern	&Intern::operator=(const Intern &ref) {
+	if (this != &ref)
+		*this = ref;
+	std::cout << "Intern assignation (=) operator called" << std::endl;
+	return (*this);
 }
 
 // --- Functions --- //
@@ -40,8 +57,6 @@ AForm	*Intern::ShrubberyExecution(std::string targetName) {
 }
 
 AForm	*Intern::makeForm(std::string formName, std::string targetName) {
-	AForm *(Intern::*actions[3])(std::string) = {&Intern::PresidentialExecution, &Intern::RobotomyExecution, &Intern::ShrubberyExecution};
-	std::string formActionsNames[3] = {"presidential", "robotomy", "shrubbery"};
 	for (int c = 0; c < 3; c++)
 	{
 		if (formActionsNames[c] == formName)

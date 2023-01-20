@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 15:36:05 by ullorent          #+#    #+#             */
-/*   Updated: 2023/01/19 17:10:33 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/01/20 15:44:19 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ class Intern
 		Intern(const Intern &ref);
 		~Intern();
 
+		//Functions and executors
 		AForm	*PresidentialExecution(std::string targetName);
 		AForm	*RobotomyExecution(std::string targetName);
 		AForm	*ShrubberyExecution(std::string targetName);
 
-		//Functions
 		AForm	*makeForm(std::string formName, std::string targetName);
 
 		//Exception throwers and functions
@@ -37,7 +37,11 @@ class Intern
 			virtual const char *what() const throw();
 		};
 
-		//typedef	AForm*(Intern::*action)(const std::string&) const;
+		//Overload operator
+		Intern	&operator=(const Intern &ref);
+	protected:
+		AForm *(Intern::*actions[3])(std::string);
+		std::string formActionsNames[3];
 };
 
 #endif
