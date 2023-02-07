@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Void.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 17:20:37 by ullorent          #+#    #+#             */
-/*   Updated: 2023/02/07 18:34:54 by ullorent         ###   ########.fr       */
+/*   Created: 2023/01/27 13:53:44 by ullorent          #+#    #+#             */
+/*   Updated: 2023/01/27 16:02:18 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Double.hpp"
 #include "Void.hpp"
-#include <string>
 
-int	main(int argc, char **argv) {
-	if (argc == 2)
-	{
-		Void	*vd = NULL;
-		std::string	str = argv[1];
-
-		vd = new Double(str);
-		vd->DoubleNumber();
-
-		delete vd;
-	}
-	else
-	{
-		std::cout << "❌ \033[1;31mInssuficient arguments! You need to specify a char, int, float or a double value!\033[0m" << std::endl;
-		return (1);
-	}
-	return (0);
+// --- Constructors and destructor --- //
+Void::Void() {
+	//std::cout << "Void constructor called" << std::endl;
 }
+
+Void::Void(std::string &ref) : str(ref) {
+	//std::cout << "Void STRING constructor called" << std::endl;
+}
+
+Void::~Void() {
+	//std::cout << "Void destructor called" << std::endl;
+}
+

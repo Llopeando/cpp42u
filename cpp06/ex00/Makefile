@@ -6,16 +6,18 @@
 #    By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/24 15:55:19 by ullorent          #+#    #+#              #
-#    Updated: 2023/01/24 15:55:54 by ullorent         ###   ########.fr        #
+#    Updated: 2023/02/07 18:34:36 by ullorent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = scalar
 
 CPPSRC = main.cpp \
-Scalar.cpp \
+Double.cpp \
+Void.cpp \
 
-CPPINCLUDE = Scalar.hpp \
+CPPINCLUDE = Double.hpp \
+Void.hpp \
 
 CPPOSRC = $(CPPSRC:.cpp=.o)
 

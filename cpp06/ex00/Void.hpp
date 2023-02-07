@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Void.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 17:20:37 by ullorent          #+#    #+#             */
-/*   Updated: 2023/02/07 18:34:54 by ullorent         ###   ########.fr       */
+/*   Created: 2023/01/27 13:53:21 by ullorent          #+#    #+#             */
+/*   Updated: 2023/02/07 18:32:57 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Double.hpp"
-#include "Void.hpp"
-#include <string>
+#ifndef VOID_HPP_
+#define VOID_HPP_
+#include <iostream>
 
-int	main(int argc, char **argv) {
-	if (argc == 2)
-	{
-		Void	*vd = NULL;
-		std::string	str = argv[1];
+class Void
+{
+	public:
+		Void();
+		Void(std::string &ref);
+		virtual ~Void();
 
-		vd = new Double(str);
-		vd->DoubleNumber();
+		virtual	void DoubleNumber() = 0;
+	protected:
+		std::string	str;
+};
 
-		delete vd;
-	}
-	else
-	{
-		std::cout << "❌ \033[1;31mInssuficient arguments! You need to specify a char, int, float or a double value!\033[0m" << std::endl;
-		return (1);
-	}
-	return (0);
-}
+#endif
