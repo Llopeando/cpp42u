@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:20:37 by ullorent          #+#    #+#             */
-/*   Updated: 2023/02/07 18:34:54 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/02/09 17:02:17 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,14 @@ int	main(int argc, char **argv) {
 		std::string	str = argv[1];
 
 		vd = new Double(str);
-		vd->DoubleNumber();
+		if (str == "-inff" || str == "+inff" || str == "inff" || str == "nanf" ||
+		str == "-inf" || str == "+inf" || str == "inf" || str == "nan") {
+			vd->checkException();
+		}
+		else {
+			vd->checkLength();
+			vd->DoubleNumber();
+		}
 
 		delete vd;
 	}

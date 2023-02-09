@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:54:27 by ullorent          #+#    #+#             */
-/*   Updated: 2023/02/07 18:50:12 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/02/09 17:08:46 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ Double::~Double() {
 
 // --- Functions --- //
 void	Double::DoubleNumber() {
-	checkLength();
 	if (num >= 32 && num <= 126)
 		std::cout << "\033[1;37mchar: \033[0m'" << static_cast<char>(num) << "'" << std::endl;
 	else
@@ -42,13 +41,34 @@ void	Double::DoubleNumber() {
 	std::cout << "\033[1;37mdouble: \033[0m" << std::fixed << num << std::endl;
 }
 
-void	Double::checkLength() {
-	if (str.find('.', 0) > str.size()) //Here we check if there is not a point in the number
-		pre = 1;
-	else {
-		pre = str.size() - str.find('.', 0) - 1;
-		if (str.find('f') <= str.size())
-			pre -= 1;
+void	Double::checkException() {
+	std::cout << "\033[1;37mchar: \033[0mimpossible" << std::endl;
+	std::cout << "\033[1;37mint: \033[0mimpossible" << std::endl;
+	if (str == "-inf" || str == "+inf" || str == "inf" ||str == "nan")
+	{
+		std::cout << "\033[1;37mfloat: \033[0m" << str << "f" << std::endl;
+		std::cout << "\033[1;37mdouble: \033[0m" << str << std::endl;
 	}
-	num = std::stod(str);
+	else {
+		std::cout << "\033[1;37mfloat: \033[0m" << str << std::endl;
+		std::cout << "\033[1;37mdouble: \033[0m" << str.substr(0, str.length() - 1) << std::endl;
+	}
+}
+
+void	Double::checkLength() {
+	try{
+		num = std::stod(str);
+		if (str.find('.', 0) > str.size()) //Here we check if there is not a point in the number
+			pre = 1;
+		else {
+			pre = str.size() - str.find('.', 0) - 1;
+			if (str.find('f') <= str.size())
+				pre -= 1;
+		}
+	}
+	catch(std::exception &e)
+	{
+		std::cout << "\033[1;37mchar: \033[0m'" << str << "'" << std::endl;
+	}
+	
 }

@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:53:51 by ullorent          #+#    #+#             */
-/*   Updated: 2023/02/07 18:11:50 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/02/09 16:53:04 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Double : public Void
 		
 		void	DoubleNumber();
 		void	checkLength();
+		void	checkException();
 	private:
 		int pre;
 		double	num;
