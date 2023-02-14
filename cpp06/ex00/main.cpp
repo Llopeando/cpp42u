@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:20:37 by ullorent          #+#    #+#             */
-/*   Updated: 2023/02/09 17:02:17 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/02/14 16:06:23 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,15 @@ int	main(int argc, char **argv) {
 		}
 		else {
 			vd->checkLength();
+			if (vd->checkIsNumber(str) == true )
+				return (1);
 			vd->DoubleNumber();
 		}
-
 		delete vd;
 	}
 	else
 	{
-		std::cout << "❌ \033[1;31mInssuficient arguments! You need to specify a char, int, float or a double value!\033[0m" << std::endl;
+		std::cout << "❌ \033[1;31mInssuficient arguments! You need to specify a char (with 'CHAR'), int, float or a double value!\033[0m" << std::endl;
 		return (1);
 	}
 	return (0);
