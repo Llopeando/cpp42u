@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:20:37 by ullorent          #+#    #+#             */
-/*   Updated: 2023/02/14 16:06:23 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/02/15 16:55:55 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #include <string>
 
 int	main(int argc, char **argv) {
+	int	c = 0;
+
 	if (argc == 2)
 	{
 		Void	*vd = NULL;
@@ -26,9 +28,16 @@ int	main(int argc, char **argv) {
 			vd->checkException();
 		}
 		else {
+			while (argv[1][c] == '.')
+			{
+				if (c >= 1 || str.size() == 1)
+				{
+					std::cout << "❌ \033[1;31mInvalid arguments! You need to specify a char (with 'CHAR'), int, float or a double value!\033[0m" << std::endl;
+					return (1);
+				}
+				c++;
+			}
 			vd->checkLength();
-			if (vd->checkIsNumber(str) == true )
-				return (1);
 			vd->DoubleNumber();
 		}
 		delete vd;

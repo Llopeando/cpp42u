@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:54:27 by ullorent          #+#    #+#             */
-/*   Updated: 2023/02/14 16:14:21 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/02/15 16:50:33 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,16 @@ bool	Double::checkIsNumber(std::string str) {
 	for (size_t c = 0; c < str.length(); c++) {
 		if (!isdigit(str[c])) {
 			return true;
-			break;
 		}
 	}
 	return false;
 }
 
 void	Double::DoubleNumber() {
-	// if (checkIsNumber(str) == true && isStr == false && isFloat == false) {
-	// 	std::cout << "❌ \033[1;31mInvalid arguments! You need to specify a char (with 'CHAR'), int, float or a double value!\033[0m" << std::endl;
-	// 	return ;
-	// }
+	if (checkIsNumber(str) == true && isStr == false && isFloat == false) {
+		std::cout << "❌ \033[1;31mInvalid arguments! You need to specify a char (with 'CHAR'), int, float or a double value!\033[0m" << std::endl;
+		return ;
+	}
 	if (num >= 32 && num <= 126)
 		std::cout << "\033[1;37mchar: \033[0m'" << static_cast<char>(num) << "'" << std::endl;
 	else
@@ -76,10 +75,12 @@ void	Double::checkException() {
 }
 
 void	Double::checkLength() {
-	try{
+	try {
 		if (str.find('.', 0) > str.size()) //Here we check if there is not a point in the number
 			pre = 1;
 		else {
+			if (str.find('f') < str.size() && str.find('f') + 1 < str.size())
+				return ;
 			pre = str.size() - str.find('.', 0) - 1;
 			if (str.find('f') <= str.size())
 				pre -= 1;
