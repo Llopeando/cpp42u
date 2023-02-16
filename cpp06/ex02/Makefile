@@ -5,16 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/15 15:53:38 by ullorent          #+#    #+#              #
-#    Updated: 2023/02/16 19:11:31 by ullorent         ###   ########.fr        #
+#    Created: 2023/02/16 18:22:21 by ullorent          #+#    #+#              #
+#    Updated: 2023/02/16 18:22:45 by ullorent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = serialization
+NAME = realtype
 
 CPPSRC = main.cpp \
+Base.cpp \
 
-CPPINCLUDE = Data.h \
+CPPINCLUDE = Base.hpp \
 
 CPPOSRC = $(CPPSRC:.cpp=.o)
 
@@ -28,7 +29,7 @@ all: $(NAME)
 
 $(NAME): $(CPPOSRC) $(CPPINCLUDE)
 	@$(CLANGCMD) $(CPPFLAGS) $(CPPOSRC) -I. -o $(NAME)
-	@echo "\033[92mcpp06/ex01 has been successfully compiled!\033[0m"
+	@echo "\033[92mcpp06/ex02 has been successfully compiled!\033[0m"
 
 clean:
 	@rm -rf *.o
