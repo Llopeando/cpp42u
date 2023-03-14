@@ -5,19 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/24 15:55:19 by ullorent          #+#    #+#              #
-#    Updated: 2023/03/09 12:53:49 by ullorent         ###   ########.fr        #
+#    Created: 2023/03/13 17:37:25 by ullorent          #+#    #+#              #
+#    Updated: 2023/03/13 17:37:55 by ullorent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = scalar
+NAME = iter
 
 CPPSRC = main.cpp \
-Double.cpp \
-Void.cpp \
 
-CPPINCLUDE = Double.hpp \
-Void.hpp \
+CPPINCLUDE = iter.hpp \
 
 CPPOSRC = $(CPPSRC:.cpp=.o)
 
@@ -31,7 +28,7 @@ all: $(NAME)
 
 $(NAME): $(CPPOSRC) $(CPPINCLUDE)
 	@$(CLANGCMD) $(CPPFLAGS) $(CPPOSRC) -I. -o $(NAME)
-	@echo "\033[92mcpp06/ex00 has been successfully compiled!\033[0m"
+	@echo "\033[92mcpp07/ex01 has been successfully compiled!\033[0m"
 
 clean:
 	@rm -rf *.o

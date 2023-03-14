@@ -6,7 +6,7 @@
 #    By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/15 15:53:38 by ullorent          #+#    #+#              #
-#    Updated: 2023/02/16 19:11:31 by ullorent         ###   ########.fr        #
+#    Updated: 2023/03/09 12:53:42 by ullorent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CPPINCLUDE = Data.h \
 
 CPPOSRC = $(CPPSRC:.cpp=.o)
 
-CPPFLAGS = -Wall -Werror -Wextra
+CPPFLAGS = -Wall -Werror -Wextra #-std=c++98
 CLANGCMD = c++
 
 all: $(NAME)
@@ -33,7 +33,6 @@ $(NAME): $(CPPOSRC) $(CPPINCLUDE)
 clean:
 	@rm -rf *.o
 	@rm -rf *.dSYM
-	@rm -rf *.tree
 
 fclean: clean
 	@rm -rf $(NAME)

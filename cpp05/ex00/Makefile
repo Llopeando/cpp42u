@@ -6,7 +6,7 @@
 #    By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/10 16:11:39 by ullorent          #+#    #+#              #
-#    Updated: 2023/01/11 18:59:57 by ullorent         ###   ########.fr        #
+#    Updated: 2023/03/09 11:34:01 by ullorent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CPPINCLUDE = Bureaucrat.hpp \
 
 CPPOSRC = $(CPPSRC:.cpp=.o)
 
-CPPFLAGS = -Wall -Werror -Wextra
+CPPFLAGS = -Wall -Werror -Wextra std=c++98
 CLANGCMD = c++
 
 all: $(NAME)

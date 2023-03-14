@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:20:37 by ullorent          #+#    #+#             */
-/*   Updated: 2023/02/15 16:55:55 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/03/09 12:56:26 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	main(int argc, char **argv) {
 	}
 	else
 	{
-		std::cout << "❌ \033[1;31mInssuficient arguments! You need to specify a char (with 'CHAR'), int, float or a double value!\033[0m" << std::endl;
+		std::cout << "❌ \033[1;31mInsufficient or too many arguments! You need to specify a char (with 'CHAR'), int, float or a double value!\033[0m" << std::endl;
 		return (1);
 	}
 	return (0);

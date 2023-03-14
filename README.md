@@ -11,15 +11,16 @@
 | Proyecto | Estado | Nota final |
 | :-------------: | :-------------: | :-------------: |
 | ⌨️ | 🧠 | 🖊️ |
-| C++ 00 | Finalizado 🟢 | ✅ **100** |
-| C++ 01 | Finalizado 🟢 | ✅ **100** |
-| C++ 02 | Finalizado 🟢 | ✅ **100** |
-| C++ 03 | Finalizado 🟢 | ✅ **100** |
-| C++ 04 | Finalizado 🟢 | ✅ **100** |
-| C++ 05 | Finalizado 🟢 | ✅ **100** |
-| C++ 06 | En proceso 🟠 | ❓❓❓ |
-| C++ 07 | Sin empezar 🔴 | ❓❓❓ |
-| C++ 08 | Sin empezar 🔴 | ❓❓❓ |
+| [C++ 00](https://github.com/Llopeando/cpp42u/tree/main/cpp00) | Finalizado 🟢 | ✅ **100** |
+| [C++ 01](https://github.com/Llopeando/cpp42u/tree/main/cpp01) | Finalizado 🟢 | ✅ **100** |
+| [C++ 02](https://github.com/Llopeando/cpp42u/tree/main/cpp02) | Finalizado 🟢 | ✅ **100** |
+| [C++ 03](https://github.com/Llopeando/cpp42u/tree/main/cpp03) | Finalizado 🟢 | ✅ **100** |
+| [C++ 04](https://github.com/Llopeando/cpp42u/tree/main/cpp04) | Finalizado 🟢 | ✅ **100** |
+| [C++ 05](https://github.com/Llopeando/cpp42u/tree/main/cpp05) | Finalizado 🟢 | ✅ **100** |
+| [C++ 06](https://github.com/Llopeando/cpp42u/tree/main/cpp06) | Finalizado 🟢 | ✅ **100** |
+| [C++ 07](https://github.com/Llopeando/cpp42u/tree/main/cpp07) | En proceso 🟠 | ❓❓❓ |
+| [C++ 08](https://github.com/Llopeando/cpp42u/tree/main/cpp08) | Sin empezar 🔴 | ❓❓❓ |
+| [C++ 09](https://github.com/Llopeando/cpp42u/tree/main/cpp09) | Sin empezar 🔴 | ❓❓❓ |
 
 -------
 
