@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/03/13 17:37:25 by ullorent          #+#    #+#              #
-#    Updated: 2023/03/14 13:36:16 by ullorent         ###   ########.fr        #
+#    Created: 2023/03/14 13:42:03 by ullorent          #+#    #+#              #
+#    Updated: 2023/03/14 13:42:12 by ullorent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = iter
+NAME = array
 
 CPPSRC = main.cpp \
 
-CPPINCLUDE = iter.hpp \
+CPPINCLUDE = Array.hpp \
 
 CPPOSRC = $(CPPSRC:.cpp=.o)
 
@@ -28,7 +28,7 @@ all: $(NAME)
 
 $(NAME): $(CPPOSRC) $(CPPINCLUDE)
 	@$(CLANGCMD) $(CPPFLAGS) $(CPPOSRC) -I. -o $(NAME)
-	@echo "\033[92mcpp07/ex01 has been successfully compiled!\033[0m"
+	@echo "\033[92mcpp07/ex02 has been successfully compiled!\033[0m"
 
 clean:
 	@rm -rf *.o
