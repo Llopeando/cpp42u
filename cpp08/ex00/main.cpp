@@ -6,14 +6,14 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 14:07:48 by ullorent          #+#    #+#             */
-/*   Updated: 2023/05/23 16:11:35 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/05/24 16:21:05 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
 
 int	main() {
-	EasyFind	easyfind;
+	EasyFind			easyfind;
 	std::vector<int>	mainlist;
 	std::list<int>		list;
 	std::vector<int>	tosearch;
