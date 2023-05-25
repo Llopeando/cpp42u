@@ -6,14 +6,13 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 14:07:48 by ullorent          #+#    #+#             */
-/*   Updated: 2023/05/24 16:21:05 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/05/25 16:15:08 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
 
 int	main() {
-	EasyFind			easyfind;
 	std::vector<int>	mainlist;
 	std::list<int>		list;
 	std::vector<int>	tosearch;
@@ -33,8 +32,8 @@ int	main() {
 	std::cout << "------- This list is \033[32mGOOD\033[0m check ------- " << std::endl;
 	for (size_t i = 0; i < tosearch.size(); i++) {
 		try {
-			easyfind.ocurrence(mainlist, tosearch[i]);
-			//easyfind.ocurrence(list, tosearch[i]); //Remove this comment to check the list
+			ocurrence(mainlist, tosearch[i]);
+			//ocurrence(list, tosearch[i]); //Remove this comment to check the list
 		}
 		catch (const std::exception &e) {
 			std::cerr << e.what() << std::endl;
@@ -45,7 +44,7 @@ int	main() {
 	std::cout << "\n------- This list is \033[31mBAD\033[0m check ------- " << std::endl;
 	for (size_t i = 0; i < tosearch.size(); i++) {
 		try {
-			easyfind.ocurrence(tofail, tosearch[i]);
+			ocurrence(tofail, tosearch[i]);
 		}
 		catch (const std::exception &e) {
 			std::cerr << e.what() << std::endl;

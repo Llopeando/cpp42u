@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 16:14:12 by ullorent          #+#    #+#             */
-/*   Updated: 2023/05/24 18:49:26 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/05/25 16:17:54 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Span
 	public:
 		/* Constructors and destructor */
 		Span();
+		Span(const Span &ref);
 		Span(unsigned int	maxIntegers);
 		~Span();
 

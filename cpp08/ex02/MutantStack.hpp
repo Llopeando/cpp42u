@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 19:13:27 by ullorent          #+#    #+#             */
-/*   Updated: 2023/05/25 14:24:22 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/05/25 16:18:36 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,16 @@ class MutantStack : public std::stack<T>
 {
 	public:
 		/* Constructors and destructor */
-		MutantStack() : std::stack<T>() {}
-		MutantStack(const MutantStack &ref) { *this = ref; }
-		~MutantStack() {}
+		MutantStack() : std::stack<T>() {
+			// std::cout << "MutantStack constructor called" << std::endl;
+		}
+		MutantStack(const MutantStack &ref) { 
+			*this = ref;
+			// std::cout << "MutantStack COPY constructor called" << std::endl;
+		}
+		~MutantStack() {
+			// std::cout << "MutantStack destructor called" << std::endl;
+		}
 
 		/* Overload operator */
 		MutantStack &operator=(const MutantStack &ref) {
@@ -35,7 +42,7 @@ class MutantStack : public std::stack<T>
 		}
 
 		/* Definitions */
-		typedef typename	Container::iterator iterator;
+		typedef typename	Container::iterator					iterator;
 		typedef typename	Container::const_iterator			const_iterator;
 		typedef typename	Container::reverse_iterator			reverse_iterator;
 		typedef typename	Container::const_reverse_iterator	const_reverse_iterator;
@@ -47,8 +54,8 @@ class MutantStack : public std::stack<T>
 		const_iterator cend() const { return (this->c.cend()); }
 		reverse_iterator rbegin() { return (this->c.rbegin()); }
 		reverse_iterator rend() { return (this->c.rend()); }
-		const_reverse_iterator crbegin() { return (this->c.crbegin()); }
-		const_reverse_iterator crend() { return (this->c.crend()); }
+		const_reverse_iterator crbegin() const { return (this->c.crbegin()); }
+		const_reverse_iterator crend() const { return (this->c.crend()); }
 };
 
 #endif

@@ -6,18 +6,27 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 16:14:53 by ullorent          #+#    #+#             */
-/*   Updated: 2023/05/24 18:57:18 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/05/25 16:27:15 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
 /* --- Constructors and destructor --- */
-Span::Span() : maxQuantity(0) { }
+Span::Span() : maxQuantity(0) {
+	// std::cout << "Span constructor called" << std::endl;
+}
+
+Span::Span(const Span &ref) {
+	*this = ref;
+	// std::cout << "Span COPY constructor called" << std::endl;
+}
 
 Span::Span(unsigned int maxIntegers) : maxQuantity(maxIntegers) { }
 
-Span::~Span() { }
+Span::~Span() {
+	// std::cout << "Span destructor called" << std::endl;
+}
 
 /* --- Overload operator --- */
 Span	&Span::operator=(const Span &ref) {
@@ -43,7 +52,6 @@ void	Span::addManyNumbers(int numbersQToAssign) {
 		++begin;
 		++i;
 	}
-
 	for (int i = 0; i < numbersQToAssign; ++i) {
 		spanList.push_back(i);
 	}
