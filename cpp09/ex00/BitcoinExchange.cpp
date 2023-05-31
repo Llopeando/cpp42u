@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 14:32:53 by ullorent          #+#    #+#             */
-/*   Updated: 2023/05/31 17:39:49 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/05/31 17:55:10 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ BitcoinExchange::~BitcoinExchange() {
 BitcoinExchange	&BitcoinExchange::operator=(const BitcoinExchange &ref) {
 	if (this != &ref)
 		*this = ref;
-	return (*this);
 	// std::cout << "BitcoinExchange (=) overload operator called" << std::endl;
+	return (*this);
 }
 
 /* Member functions */
