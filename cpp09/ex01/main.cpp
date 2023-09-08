@@ -6,11 +6,17 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 17:51:35 by ullorent          #+#    #+#             */
-/*   Updated: 2023/05/31 19:21:08 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/09/07 13:57:49 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
+
+void print(std::list<char *> const &list) {
+	for (auto const &i: list) {
+		std::cout << i << std::endl;
+	}
+}
 
 int main(int argc, char *argv[]) {
 	if (argc != 2) {
@@ -20,6 +26,7 @@ int main(int argc, char *argv[]) {
 	std::list<char *>	argList;
 	argList.push_back(argv[1]);
 
+	print(argList);
 	RPN	rpn;
 
 	rpn.argumentsTaker(argList);

@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 17:52:11 by ullorent          #+#    #+#             */
-/*   Updated: 2023/05/31 19:16:32 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/09/07 14:03:32 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,18 @@ bool	RPN::argumentsTaker(std::list<char *> argList) {
 		char *token = argList.front();
 		argList.pop_front();
 
-		if (isdigit(token[0]))
+		if (isdigit(token[0])) {
 			stack.push_back(atof(token));
+		}
 		else if (token[0] == '+' || token[0] == '-' || token[0] == '/' || token[0] == '*') {
 			double	operand2 = stack.back();
 			stack.pop_back();
+			std::cout << "es un +\n" << std::endl;
 			double	operand1 = stack.back();
 			stack.pop_back();
 
 			if (token[0] == '+') {
+				std::cout << "es un +\n" << std::endl;
 				stack.push_back(operand1 + operand2);
 			}
 		}
