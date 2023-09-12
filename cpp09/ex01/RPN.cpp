@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 17:52:11 by ullorent          #+#    #+#             */
-/*   Updated: 2023/09/07 14:03:32 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/09/12 17:24:38 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,29 +35,11 @@ RPN	RPN::operator=(const RPN &ref) {
 }
 
 /* Member functions */
-bool	RPN::argumentsTaker(std::list<char *> argList) {
-	std::list<double>	stack;
+bool	RPN::argumentsTaker(std::stack<char *> argList) {
+	std::stack<double>	nmbrStack;
 
 	while (argList.size() != 0) {
-		char *token = argList.front();
-		argList.pop_front();
-
-		if (isdigit(token[0])) {
-			stack.push_back(atof(token));
-		}
-		else if (token[0] == '+' || token[0] == '-' || token[0] == '/' || token[0] == '*') {
-			double	operand2 = stack.back();
-			stack.pop_back();
-			std::cout << "es un +\n" << std::endl;
-			double	operand1 = stack.back();
-			stack.pop_back();
-
-			if (token[0] == '+') {
-				std::cout << "es un +\n" << std::endl;
-				stack.push_back(operand1 + operand2);
-			}
-		}
+		
 	}
-	std::cout << "Resultado: " << stack.front() << std::endl;
 	return false;
 }
