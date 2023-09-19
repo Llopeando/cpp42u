@@ -6,7 +6,7 @@
 #    By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/31 17:51:01 by ullorent          #+#    #+#              #
-#    Updated: 2023/09/07 13:59:32 by ullorent         ###   ########.fr        #
+#    Updated: 2023/09/19 17:59:53 by ullorent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CPPINCLUDE = RPN.hpp \
 
 CPPOSRC = $(CPPSRC:.cpp=.o)
 
-CPPFLAGS = #-Wall -Werror -Wextra -std=c++98
+CPPFLAGS = -Wall -Werror -Wextra -std=c++98 -g3 -fsanitize=address
 CLANGCMD = c++
 
 all: $(NAME)

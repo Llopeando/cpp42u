@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 17:52:11 by ullorent          #+#    #+#             */
-/*   Updated: 2023/09/12 17:24:38 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/09/19 18:27:31 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,49 @@ RPN	RPN::operator=(const RPN &ref) {
 }
 
 /* Member functions */
-bool	RPN::argumentsTaker(std::stack<char *> argList) {
-	std::stack<double>	nmbrStack;
+int	RPN::operate(int a, int b, char oprtr) {
+	switch (oprtr) {
+		case '+':
+			return (a + b);
+		case '-':
+			return (a - b);
+		case '/':
+			return (a / b);
+		case '*':
+			return (a * b);
+	}
+	return (0);
+}
 
-	while (argList.size() != 0) {
-		
+bool	RPN::is_operator(char oprtr) {
+	if (oprtr == '+' || oprtr == '-' || oprtr == '/' || oprtr == '*') {
+		return true;
 	}
 	return false;
+}
+
+bool	RPN::argumentsTaker(std::string str) {
+	std::stack<int>	numbers;
+
+	for (uint32_t i = 0; i < str.size(); i++) {
+		if (is_operator(str[i])) {
+			if (numbers.size() <= 1) {
+				std::cout << "[\033[31m✗\033[0m] You've introduced invalid arguments! Check your operators" << std::endl;
+				return false;
+			}
+			int	b = numbers.top();
+			numbers.pop();
+			int	a = numbers.top();
+			numbers.pop();
+
+			numbers.push(operate(a, b, str[i]));
+		}
+		if (isdigit(str[i])) {
+			numbers.push(str[i] - '0');
+		}
+	}
+	if (numbers.size() != 0) {
+		std::cout << "Result: " << numbers.top() << std::endl;
+	}
+	return true;
 }

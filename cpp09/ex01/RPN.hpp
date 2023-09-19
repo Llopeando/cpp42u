@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 17:51:48 by ullorent          #+#    #+#             */
-/*   Updated: 2023/09/12 17:23:46 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/09/19 17:45:01 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define RPN_HPP_
 #include <iostream>
 #include <stack>
+#include <cstring>
+#include <sstream>
 
 class RPN
 {
@@ -27,7 +29,9 @@ class RPN
 		RPN	operator=(const RPN &ref);
 
 		/* Member functions */
-		bool	argumentsTaker(std::stack<char *> argList);
+		bool	argumentsTaker(std::string str);
+		bool	is_operator(char oprtr);
+		int		operate(int a, int b, char oprtr);
 	private:
 		/* Nothing to see here... */
 };
