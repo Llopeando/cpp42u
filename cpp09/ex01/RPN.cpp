@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 17:52:11 by ullorent          #+#    #+#             */
-/*   Updated: 2023/09/19 18:27:31 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/09/20 15:31:40 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,10 @@ bool	RPN::argumentsTaker(std::string str) {
 			int	a = numbers.top();
 			numbers.pop();
 
+			if (b == 0 && str[i] == '/') { /* Divided by 0 checker */
+				std::cout << "[\033[31m✗\033[0m] You cannot divide by 0!" << std::endl;
+				return false;
+			}
 			numbers.push(operate(a, b, str[i]));
 		}
 		if (isdigit(str[i])) {
