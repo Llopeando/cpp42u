@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 14:32:53 by ullorent          #+#    #+#             */
-/*   Updated: 2023/05/31 17:55:10 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/09/28 18:17:08 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,51 @@ BitcoinExchange	&BitcoinExchange::operator=(const BitcoinExchange &ref) {
 }
 
 /* Member functions */
-std::vector<std::string>	BitcoinExchange::inputDataSaver(const std::string file) {
-	std::vector<std::string>	readed;
+bool	BitcoinExchange::mapDbInsert(const std::string &ref) {
+	std::string	date;
+	std::tm		tm = {};
+	float		num = 0;
+
+	date = ref.substr(0, ref.find_first_of(','));
+	if (strptime(date.c_str(), "%Y-%m-%d", &tm) == NULL) {
+		std::cout << "[\033[31m✗\033[0m] Error: bad input => " << date << std::endl;
+		return false;
+	}
+
+	num = atof(ref.substr(ref.find_first_of(',') + 1).c_str());
+	mapDb[mktime(&tm)] = num;
+	return true;
+}
+
+bool	BitcoinExchange::inputAndCalc(const std::string &ref) {
+	std::map<time_t, float>::iterator value;
+	std::string	date;
+	std::tm		tm = {};
+	float		num = 0;
+
+	date = ref.substr(0, ref.find_first_of('|'));
+	if (strptime(date.c_str(), "%Y-%m-%d", &tm) == NULL) {
+		std::cout << "[\033[31m✗\033[0m] Error: bad input => " << date << std::endl;
+		return false;
+	}
+
+	else {
+		time_t time = mktime(&tm);
+		num = atof(ref.substr(ref.find_first_of('|') + 1).c_str());
+		if (inputValueChecker(num))
+			return false;
+		value = mapDb.lower_bound(time);
+		if (value == mapDb.begin()) {
+			std::cout << "[\033[31m✗\033[0m] Error: bad input => " << date << std::endl;
+			return false;
+		}
+		value--;
+		std::cout << date << "=> " << num << " = " << num * value->second << std::endl;
+	}
+	return true;
+}
+
+bool	BitcoinExchange::dataReader(const std::string file, bool boo) {
 	std::fstream	inputDataFile;
 
 	inputDataFile.open(file);
@@ -44,42 +87,16 @@ std::vector<std::string>	BitcoinExchange::inputDataSaver(const std::string file)
 		throw InvalidFileException();
 	else {
 		std::string	line;
+		std::getline(inputDataFile, line);
 		while (std::getline(inputDataFile, line)) {
-			readed.push_back(line);
+			if (boo)
+				mapDbInsert(line);
+			else
+				inputAndCalc(line);
 		}
 		inputDataFile.close();
 	}
-	return (readed);
-}
-
-void	BitcoinExchange::inputSpliter(std::vector<std::string> input) {
-	std::vector<std::string>	tokens;
-
-	for (size_t i = 0; i < input.size(); i++) {
-		tokens = split(input[i], ' ');
-		std::string date = tokens[0];
-		std::string number = tokens[2];
-
-		inputDate.push_back(date);
-		inputBtcNumber.push_back(number);
-	}
-}
-
-void	BitcoinExchange::databaseSpliter(std::vector<std::string> database) {
-	std::vector<std::string>	tokens;
-
-	for (size_t i = 0; i < database.size(); i++) {
-		tokens = split(database[i], ',');
-		if (tokens.size() == 2) {
-			std::string date = tokens[0];
-			std::string number = tokens[1];
-
-			databaseDate.push_back(date);
-			databaseBtcValue.push_back(number);
-		}
-		else
-			std::cout << "[\033[31m✗\033[0m] Error: bad database input => " << tokens[0] << std::endl;
-	}
+	return true;
 }
 
 bool	BitcoinExchange::inputValueChecker(int inputBtcNumber) {
@@ -91,55 +108,9 @@ bool	BitcoinExchange::inputValueChecker(int inputBtcNumber) {
 		std::cout << "[\033[31m✗\033[0m] Error: not a positive number" << std::endl;
 		return true;
 	}
+	else if (inputBtcNumber > 1000) {
+		std::cout << "[\033[31m✗\033[0m] Error: larger than 1000" << std::endl;
+		return true;
+	}
 	return false;
-}
-
-void	BitcoinExchange::btcCalculator() {
-	for (size_t i = 1; i < inputDate.size(); i++) {
-		size_t	closestIndex = 0;
-		bool	dateFound = false;
-		for (size_t j = 1; j < databaseDate.size(); j++) {
-			if (databaseDate[j] == inputDate[i]) {
-				closestIndex = j;
-				dateFound = true;
-				break ;
-			}
-			else if (databaseDate[j] < inputDate[i]) {
-				closestIndex = j;
-			}
-			else
-				break ;
-		}
-		if (dateFound || closestIndex > 0) {
-			if (inputValueChecker(atoi(inputBtcNumber[i].c_str())) == false)
-				std::cout << inputDate[i] << " => " << inputBtcNumber[i] << " = " << atof(inputBtcNumber[i].c_str()) * atof(databaseBtcValue[closestIndex].c_str()) << std::endl;
-		}
-		else {
-			std::cout << "[\033[31m✗\033[0m] Error: bad input => " << inputDate[i] << std::endl;
-		}
-	}
-}
-
-/* Public functions */
-// Split function taken from the ft_irc project made by eperaita, ecamara and me
-std::vector<std::string> split(const std::string &string, const char c)
-{
-	std::vector<std::string> tokens;
-	std::string::size_type start = string.find_first_not_of(c);
-	std::string::size_type end = string.find_first_of(c, start);
-	while (start != std::string::npos)
-	{
-		if (end != std::string::npos)
-		{ 
-			tokens.push_back(string.substr(start, end - start));
-			start = string.find_first_not_of(c, end);
-			end = string.find_first_of(c, start);
-		}
-		else
-		{
-			tokens.push_back(string.substr(start));
-			break;
-		}
-	}
-	return tokens;
 }
