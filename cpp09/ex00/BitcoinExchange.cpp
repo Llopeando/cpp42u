@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 14:32:53 by ullorent          #+#    #+#             */
-/*   Updated: 2023/09/28 18:17:08 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/09/29 14:03:34 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,17 +55,15 @@ bool	BitcoinExchange::inputAndCalc(const std::string &ref) {
 	std::map<time_t, float>::iterator value;
 	std::string	date;
 	std::tm		tm = {};
-	float		num = 0;
 
 	date = ref.substr(0, ref.find_first_of('|'));
 	if (strptime(date.c_str(), "%Y-%m-%d", &tm) == NULL) {
 		std::cout << "[\033[31m✗\033[0m] Error: bad input => " << date << std::endl;
 		return false;
 	}
-
 	else {
 		time_t time = mktime(&tm);
-		num = atof(ref.substr(ref.find_first_of('|') + 1).c_str());
+		int	num = atoi(ref.substr(ref.find_first_of('|') + 1).c_str());
 		if (inputValueChecker(num))
 			return false;
 		value = mapDb.lower_bound(time);
@@ -74,7 +72,8 @@ bool	BitcoinExchange::inputAndCalc(const std::string &ref) {
 			return false;
 		}
 		value--;
-		std::cout << date << "=> " << num << " = " << num * value->second << std::endl;
+		std::cout.precision(2);
+		std::cout << date << "=> " << num << " = " << num * value->second << std::fixed << std::endl;
 	}
 	return true;
 }

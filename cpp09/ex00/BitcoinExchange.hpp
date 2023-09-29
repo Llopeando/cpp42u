@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 14:32:07 by ullorent          #+#    #+#             */
-/*   Updated: 2023/09/28 17:39:41 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/09/29 13:03:13 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include <vector>
 #include <map>
 #include <ctime>
+#include <iomanip>
 
 class BitcoinExchange
 {
