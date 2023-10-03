@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 14:19:19 by ullorent          #+#    #+#             */
-/*   Updated: 2023/10/02 14:41:57 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/10/03 17:21:40 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,34 @@ void	vectorPrinter(std::vector<int> vct) {
 	std::cout << std::endl;
 }
 
-std::vector<int>	PmergeMe::mergeVctr(std::vector<int> left, std::vector<int> right, std::vector<int> numbers) {
-	(void)right;
-	(void)numbers;
-	return (left);
+std::vector<int>	PmergeMe::mergeVctr(std::vector<int> left, std::vector<int> right) {
+	std::vector<int>	ordered;
+	unsigned long int	i = 0;
+	unsigned long int	j = 0;
+
+	// Vamos a rellenar con un lado de la lista primero depeniendo de si un número es mas grande que el otro
+	while (i < left.size() && j < right.size()) {
+		if (left[i] <= right[j]) {
+			ordered.push_back(left[i]);
+			i++;
+		}
+		else {
+			ordered.push_back(right[j]);
+			j++;
+		}
+	}
+
+	// Ahora, vamos a rellenar el otro lado si la otra lista ya ha sido rellenada
+	while (i < left.size()) {
+		ordered.push_back(left[i]);
+		i++;
+	}
+	while (j < right.size()) {
+		ordered.push_back(right[j]);
+		j++;
+	}
+
+	return (ordered);
 }
 
 std::vector<int>	PmergeMe::mergeInsert(std::vector<int> numbers) {
@@ -61,18 +85,29 @@ std::vector<int>	PmergeMe::mergeInsert(std::vector<int> numbers) {
 	right = mergeInsert(right);
 
 	// Y luego, ordenamos
-	return (mergeVctr(left, right, numbers));
+	return (mergeVctr(left, right));
 }
 
 std::vector<int>	PmergeMe::numbersInserter(int number, bool boo) {
 	if (boo) {
 		std::vector<int>::iterator	it;
+		std::vector<int>	after;
+		clock_t	start_time;
+		clock_t	end_time;
 
+		start_time = clock();
 		std::cout << "Before: ";
-		for (it = numbers.begin(); it != numbers.end(); it++)
-			std::cout << *it << " ";
+		vectorPrinter(numbers);
+
+		after = mergeInsert(numbers);
+		std::cout << "After: ";
+		vectorPrinter(after);
 		std::cout << std::endl;
-		mergeInsert(numbers);
+
+		end_time = clock();
+		double	timeMs = (end_time - start_time) / CLOCKS_PER_SEC * 1000;
+		std::cout << std::fixed << std::cout.precision(12) << "Time to process a range of " << numbers.size() << " elements with std::vector : " << timeMs << "ms" << std::endl;
+		//std::cout << "Time to process a range of " << numbers.size() << " elements with std::deque : " << timeMs << "ms" << std::fixed << std::endl;
 	}
 	numbers.push_back(number);
 	return (numbers);
