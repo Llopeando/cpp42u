@@ -6,14 +6,14 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 14:19:22 by ullorent          #+#    #+#             */
-/*   Updated: 2023/10/03 16:28:56 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/10/04 15:47:08 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
 int	main(int argc, char *argv[]) {
-	if (argc <= 2) {
+	if (argc <= 1) {
 		std::cout << "" "[\033[31m✗\033[0m] You've introduced invalid arguments! (Try it like this: ./PmergeMe " << "3 2 1)" << std::endl;
 		return (1);
 	}

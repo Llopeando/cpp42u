@@ -6,7 +6,7 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 14:32:53 by ullorent          #+#    #+#             */
-/*   Updated: 2023/09/29 14:03:34 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/10/04 16:08:08 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ BitcoinExchange	&BitcoinExchange::operator=(const BitcoinExchange &ref) {
 /* Member functions */
 bool	BitcoinExchange::mapDbInsert(const std::string &ref) {
 	std::string	date;
-	std::tm		tm = {};
+	std::tm		tm;
+	std::memset(&tm, 0, sizeof(tm));
 	float		num = 0;
 
 	date = ref.substr(0, ref.find_first_of(','));
@@ -54,7 +55,8 @@ bool	BitcoinExchange::mapDbInsert(const std::string &ref) {
 bool	BitcoinExchange::inputAndCalc(const std::string &ref) {
 	std::map<time_t, float>::iterator value;
 	std::string	date;
-	std::tm		tm = {};
+	std::tm		tm;
+	std::memset(&tm, 0, sizeof(tm));
 
 	date = ref.substr(0, ref.find_first_of('|'));
 	if (strptime(date.c_str(), "%Y-%m-%d", &tm) == NULL) {
@@ -63,7 +65,7 @@ bool	BitcoinExchange::inputAndCalc(const std::string &ref) {
 	}
 	else {
 		time_t time = mktime(&tm);
-		int	num = atoi(ref.substr(ref.find_first_of('|') + 1).c_str());
+		float	num = atof(ref.substr(ref.find_first_of('|') + 1).c_str());
 		if (inputValueChecker(num))
 			return false;
 		value = mapDb.lower_bound(time);

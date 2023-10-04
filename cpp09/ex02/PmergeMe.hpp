@@ -6,14 +6,16 @@
 /*   By: ullorent <ullorent@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 14:21:48 by ullorent          #+#    #+#             */
-/*   Updated: 2023/10/03 17:00:11 by ullorent         ###   ########.fr       */
+/*   Updated: 2023/10/04 15:26:02 by ullorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <vector>
 #include <ctime>
+#include <deque>
 
 class PmergeMe
 {
@@ -27,9 +29,14 @@ class PmergeMe
 		PmergeMe	&operator=(const PmergeMe &ref);
 
 		/* Member functions */
-		std::vector<int>	numbersInserter(int number, bool boo);
+		void				numbersInserter(int number, bool boo);
 		std::vector<int>	mergeInsert(std::vector<int> numbers);
 		std::vector<int>	mergeVctr(std::vector<int> left, std::vector<int> right);
+		std::deque<int>		mergeInsertDq(std::deque<int> numbers);
+		std::deque<int>		mergeDq(std::deque<int> left, std::deque<int> right);
 	private:
 		std::vector<int>	numbers;
+		std::deque<int>		dqNumbers;
 };
+
+bool	hasDuplicates(std::vector<int> finalList);
