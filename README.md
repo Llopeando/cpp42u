@@ -20,7 +20,7 @@
 | [C++ 06](https://github.com/Llopeando/cpp42u/tree/main/cpp06) | Finalizado 🟢 | ✅ **100** |
 | [C++ 07](https://github.com/Llopeando/cpp42u/tree/main/cpp07) | Finalizado 🟢 | ✅ **100** |
 | [C++ 08](https://github.com/Llopeando/cpp42u/tree/main/cpp08) | Finalizado 🟢 | ✅ **100** |
-| [C++ 09](https://github.com/Llopeando/cpp42u/tree/main/cpp09) | En proceso 🟠 | ❓❓❓ |
+| [C++ 09](https://github.com/Llopeando/cpp42u/tree/main/cpp09) | Finalizado 🟢 | ✅ **100** |
 
 -------
 
